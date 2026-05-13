@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#0b1326",
+                        "surface-container-highest": "#2d3449",
+                        "surface-bright": "#31394d",
+                        "on-tertiary-fixed-variant": "#842225",
+                        "outline": "#86948a",
+                        "on-tertiary-fixed": "#410005",
+                        "primary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#283044",
+                        "tertiary-container": "#fc7c78",
+                        "secondary-container": "#334d38",
+                        "secondary": "#b0ceb4",
+                        "surface-variant": "#2d3449",
+                        "on-surface-variant": "#bbcabf",
+                        "secondary-fixed": "#cceacf",
+                        "primary-fixed": "#6ffbbe",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#002113",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-low": "#131b2e",
+                        "on-secondary-container": "#9fbca3",
+                        "background": "#0b1326",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-error": "#690005",
+                        "on-surface": "#dae2fd",
+                        "error": "#ffb4ab",
+                        "on-primary": "#003824",
+                        "surface-dim": "#0b1326",
+                        "on-secondary-fixed-variant": "#334d38",
+                        "tertiary": "#ffb3af",
+                        "error-container": "#93000a",
+                        "primary": "#4edea3",
+                        "primary-container": "#10b981",
+                        "surface-tint": "#4edea3",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary-fixed-dim": "#ffb3af",
+                        "secondary-fixed-dim": "#b0ceb4",
+                        "inverse-surface": "#dae2fd",
+                        "outline-variant": "#3c4a42",
+                        "on-primary-container": "#00422b",
+                        "on-tertiary-container": "#711419",
+                        "on-secondary-fixed": "#062010",
+                        "surface-container": "#171f33",
+                        "inverse-primary": "#006c49",
+                        "on-secondary": "#1c3623",
+                        "on-tertiary": "#650911",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-background": "#dae2fd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .clinical-glow {
+            box-shadow: 0 0 20px rgba(78, 222, 163, 0.15);
+        }
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(134, 148, 138, 0.1);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#131b2e] flex flex-col p-6 gap-2 z-40">
+<div class="text-lg font-black text-[#4edea3] mb-8">Clinical Portal</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 p-3 font-semibold text-sm transition-all duration-200 ease-in-out text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 p-3 font-semibold text-sm transition-all duration-200 ease-in-out text-[#4edea3] bg-[#171f33] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="clinical_notes">clinical_notes</span> AI Analysis
+            </a>
+<a class="flex items-center gap-3 p-3 font-semibold text-sm transition-all duration-200 ease-in-out text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span> Routine Planner
+            </a>
+<a class="flex items-center gap-3 p-3 font-semibold text-sm transition-all duration-200 ease-in-out text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="video_chat">video_chat</span> Consultations
+            </a>
+<a class="flex items-center gap-3 p-3 font-semibold text-sm transition-all duration-200 ease-in-out text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span> Product Lab
+            </a>
+<a class="flex items-center gap-3 p-3 font-semibold text-sm transition-all duration-200 ease-in-out text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span> Progress Tracker
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-2 border-t border-[#2d3449]/20 pt-6">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a professional dermatologist in a clinical setting with soft blue ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4dKWyO0z3rI6vp8PJ9OHDtBc05pX-9g3ZiKJGkLSpUdwlhzYiRekqhflBtEIQtKkUBMEptME9Ico9cUFaEYznl4ReOYeiOvYuRcT-fmFQ87FIZDJKbzBvUfz94KDKysHH_nisRoqUHNEfk3OkfPEjVnFnTynreEGz_pmDncVtZ4fOIdD6GVoTCWvWiTAuBYrCkjT-OqmtLzOzUCmW8v9Wo9TZeEo8XqD4xCwhs0aZc-FKWmjrBzhZbpafcOGpRkXjz628gpN6OR4"/>
+</div>
+<div>
+<div class="text-sm font-bold text-[#dae2fd]">Dr. Aris Thorne</div>
+<div class="text-[10px] text-[#dae2fd]/50 uppercase tracking-wider">Level 4 Practitioner</div>
+</div>
+</div>
+<button class="bg-[#4edea3] text-[#003824] py-3 rounded-xl font-bold text-sm hover:opacity-90 transition-all active:scale-95">
+                Schedule Scan
+            </button>
+<a class="flex items-center gap-3 p-2 text-xs font-semibold text-[#dae2fd]/50 hover:text-[#dae2fd] mt-2" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span> Sign Out
+            </a>
+</div>
+<div class="bg-[#0b1326] w-px h-full absolute right-0"></div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 flex flex-col bg-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="h-16 flex items-center justify-between px-8 bg-[#0b1326] z-30">
+<div class="flex items-center gap-4 bg-surface-container-low px-4 py-2 rounded-full w-96 border border-outline-variant/10">
+<span class="material-symbols-outlined text-[#dae2fd]/50" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-[#dae2fd] placeholder-[#dae2fd]/30 w-full" placeholder="Search patient records..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#dae2fd] hover:bg-[#2d3449] p-2 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-[#dae2fd] hover:bg-[#2d3449] p-2 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="h-8 w-px bg-surface-container-highest"></div>
+<div class="text-right">
+<div class="text-xs font-bold text-primary">Patient ID: #LN-9928</div>
+<div class="text-[10px] text-on-surface/50">Last analysis: 14h ago</div>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<section class="p-12 max-w-7xl mx-auto w-full">
+<header class="mb-12">
+<span class="label-md uppercase tracking-[0.2em] text-primary mb-2 block text-xs font-bold">Clinical Analysis Phase 01</span>
+<h1 class="text-4xl font-bold tracking-tight text-on-surface">Lumière Nocturne AI Skin Scan</h1>
+</header>
+<!-- Main Interactive Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+<!-- Left: Capture Area -->
+<div class="lg:col-span-7">
+<div class="relative group">
+<!-- Soft Glowing Frame -->
+<div class="absolute -inset-0.5 bg-gradient-to-tr from-primary/30 to-transparent rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+<div class="relative bg-surface-container-low border border-outline-variant/20 rounded-xl h-[500px] flex flex-col items-center justify-center p-8 text-center overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
+<!-- Scanner Visuals (Decorations) -->
+<div class="absolute top-4 left-4 border-t-2 border-l-2 border-primary/40 w-8 h-8 rounded-tl-lg"></div>
+<div class="absolute top-4 right-4 border-t-2 border-r-2 border-primary/40 w-8 h-8 rounded-tr-lg"></div>
+<div class="absolute bottom-4 left-4 border-b-2 border-l-2 border-primary/40 w-8 h-8 rounded-bl-lg"></div>
+<div class="absolute bottom-4 right-4 border-b-2 border-r-2 border-primary/40 w-8 h-8 rounded-br-lg"></div>
+<span class="material-symbols-outlined text-6xl text-primary/30 mb-6" data-icon="photo_camera">photo_camera</span>
+<h3 class="text-xl font-semibold mb-2">Initialize Clinical Capture</h3>
+<p class="text-on-surface/60 max-w-xs mb-8 text-sm">Drag and drop high-resolution imagery or use live camera for real-time dermal mapping.</p>
+<button class="bg-primary px-8 py-3 rounded-full text-on-primary font-bold shadow-lg clinical-glow active:scale-95 transition-transform">
+                                Upload Analysis Set
+                            </button>
+<div class="mt-8 flex gap-4">
+<div class="flex items-center gap-2 text-[10px] text-on-surface/40 uppercase tracking-widest">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> RAW Support
+                                </div>
+<div class="flex items-center gap-2 text-[10px] text-on-surface/40 uppercase tracking-widest">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> 8K Precision
+                                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Summary Dashboard -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Score Card -->
+<div class="bg-surface-container-high rounded-xl p-8 glass-panel">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h4 class="text-sm font-bold text-on-surface/50 uppercase tracking-tighter">Health Vitality</h4>
+<div class="text-5xl font-black text-on-surface mt-1">84<span class="text-primary/50 text-2xl font-light">/100</span></div>
+</div>
+<div class="text-right">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase">Optimal</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest h-3 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-primary-container h-full w-[84%] rounded-full shadow-[0_0_10px_rgba(78,222,163,0.5)]"></div>
+</div>
+<p class="mt-4 text-xs text-on-surface/50 leading-relaxed">Dermal resilience is currently 12% above your average. Cellular turnover in the T-zone indicates high responsiveness to recent treatments.</p>
+</div>
+<!-- Marker Badges -->
+<div class="bg-surface-container rounded-xl p-6">
+<h4 class="text-xs font-bold text-on-surface/40 uppercase tracking-[0.1em] mb-4">Detected Markers</h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border-l-4 border-on-tertiary-fixed-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="brightness_low">brightness_low</span>
+<span class="text-sm font-semibold">Active Acne</span>
+</div>
+<span class="bg-on-tertiary-fixed-variant/20 text-tertiary text-[10px] font-black px-2 py-0.5 rounded">SEVERE</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border-l-4 border-[#eab308]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#eab308]" data-icon="texture">texture</span>
+<span class="text-sm font-semibold">Hyperpigmentation</span>
+</div>
+<span class="bg-[#eab308]/10 text-[#eab308] text-[10px] font-black px-2 py-0.5 rounded">MODERATE</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg border-l-4 border-primary">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="opacity">opacity</span>
+<span class="text-sm font-semibold">Dehydration</span>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-black px-2 py-0.5 rounded">MILD</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Spatial Mapping / Close-ups Section -->
+<div class="mt-16">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-2xl font-bold">Dermal Spatial Mapping</h2>
+<p class="text-on-surface/50 text-sm">Deep-layer microscopy and structural integrity indexing.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-outline-variant/20 text-sm font-semibold hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span> Download PDF
+                        </button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-outline-variant/20 text-sm font-semibold hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span> Share Report
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:ring-1 ring-primary/30 transition-all">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Microscopic close-up of human skin pores showing detailed texture and sebum levels in clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJCXrXsBZ-TnZsLt-BDBhJT0nya8HwWZqjqBNtfCfFtLSXtfDLBK6fv_lJZlqCjdo7W5znsfrgHsjumLzfkixTPxHDL4o3HmdI4fvVsgXsJa7i4FxKnf1rLoIP2nWN0zHjOrXNmUPpZ-Vox4pmaNRYvImDpqjIMNJkPi3t675G1_cBKNR5AQixRttwHI6R9p4B0pT5JhMjoD62flB_k6zTyvhxYiflRAYzctzgMgVxpQAc8C3mEw92-h9ViuC2FT-Hqia2nK5DEOc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest border border-white/5">Area A-04</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h5 class="font-bold text-on-surface">Pore Congestion</h5>
+<span class="text-primary font-bold text-sm">12%</span>
+</div>
+<p class="text-xs text-on-surface/50 leading-relaxed">Follicular openings are clear. Slight sebaceous activity noted in the paranasal region.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:ring-1 ring-primary/30 transition-all">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Scientific visualization of skin elasticity and collagen fiber network with glowing mesh overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb4thEXakdzpDn4-jIJIh835vOEb2Vc5YcJ6w_ms14QoiXTx2YvChlIGOl6EIG_DQq-IE1gpR_AT6JsoCXyXmaqlGfI8GzWuOQERfI9_RgQa0DILG_-n543Ku9Ctkt7Nh4lzfY3LyzzieKrh7JnV5NnyvHcjTv2HTpkKqFgX9-yM-kjRc_OIsKuJ_AmA1uukh9BnjWc4t_NhdJcgJK5yy-SiYAql0YpSlWqlGpdmxXzjJuaApVwC8rAWrQd2gLHjzvfMLHLxU31iA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest border border-white/5">Index V-02</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h5 class="font-bold text-on-surface">Elasticity Index</h5>
+<span class="text-primary font-bold text-sm">92%</span>
+</div>
+<p class="text-xs text-on-surface/50 leading-relaxed">Dermal snapping and collagen density show high-level resilience. Biological age: 24.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:ring-1 ring-primary/30 transition-all">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="UV light photography of skin revealing hidden sun damage and pigmentation spots in a clinical examination" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi2_p8Cs1uWnnI8kWI171pR3Jp1J2Z1bhG_d4H3bX2YE7Zp4vxuYL7qKUKtR8z-LA-fu2UiWW31m7UWAZigsa9u3XFP_nch9rbJ9Lk2SzW-fQ_7TNi1PnGASxIJGumpH7I581xqe-i0wTubRveJ6d4e96zcPKqkw8RA_kj_8jdIqlKfITygkRwLwF1k66ZDG7MuuIOYi9GaJGQBQzf2bDveGI80y1GuMPlfh_CqpQzg3b-gdaTP_AouPh051gOx2MIxk2ivtDmy0k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest border border-white/5">Deeper Scan</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h5 class="font-bold text-on-surface">UV Damage</h5>
+<span class="text-tertiary font-bold text-sm">42%</span>
+</div>
+<p class="text-xs text-on-surface/50 leading-relaxed">Deep-layer photo-aging present in the periorbital area. Recommend Vitamin C serum.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 mt-auto flex flex-col items-center gap-6 border-t border-[#2d3449]/10 bg-[#0b1326]">
+<div class="font-bold text-[#dae2fd]">Lumière Clinical</div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Clinical Trials</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Sustainability</a>
+</div>
+<div class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40">© 2024 Lumière Clinical. Sanctuary at Night Edition.</div>
+</footer>
+</main>
+</body></html>

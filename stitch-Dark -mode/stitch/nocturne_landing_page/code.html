@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#0b1326",
+                        "surface-container-highest": "#2d3449",
+                        "surface-bright": "#31394d",
+                        "on-tertiary-fixed-variant": "#842225",
+                        "outline": "#86948a",
+                        "on-tertiary-fixed": "#410005",
+                        "primary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#283044",
+                        "tertiary-container": "#fc7c78",
+                        "secondary-container": "#334d38",
+                        "secondary": "#b0ceb4",
+                        "surface-variant": "#2d3449",
+                        "on-surface-variant": "#bbcabf",
+                        "secondary-fixed": "#cceacf",
+                        "primary-fixed": "#6ffbbe",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#002113",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-low": "#131b2e",
+                        "on-secondary-container": "#9fbca3",
+                        "background": "#0b1326",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-error": "#690005",
+                        "on-surface": "#dae2fd",
+                        "error": "#ffb4ab",
+                        "on-primary": "#003824",
+                        "surface-dim": "#0b1326",
+                        "on-secondary-fixed-variant": "#334d38",
+                        "tertiary": "#ffb3af",
+                        "error-container": "#93000a",
+                        "primary": "#4edea3",
+                        "primary-container": "#10b981",
+                        "surface-tint": "#4edea3",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary-fixed-dim": "#ffb3af",
+                        "secondary-fixed-dim": "#b0ceb4",
+                        "inverse-surface": "#dae2fd",
+                        "outline-variant": "#3c4a42",
+                        "on-primary-container": "#00422b",
+                        "on-tertiary-container": "#711419",
+                        "on-secondary-fixed": "#062010",
+                        "surface-container": "#171f33",
+                        "inverse-primary": "#006c49",
+                        "on-secondary": "#1c3623",
+                        "on-tertiary": "#650911",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-background": "#dae2fd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #0b1326; color: #dae2fd; }
+        .glass-card {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(78, 222, 163, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/60 backdrop-blur-xl shadow-[0px_10px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-12 py-4 w-full relative">
+<div class="text-xl font-bold tracking-tight text-[#dae2fd]">Lumière Clinical</div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] font-medium text-sm tracking-wide">
+<a class="text-[#4edea3] border-b-2 border-[#4edea3] pb-1 active:scale-95 transition-transform" href="#">Science</a>
+<a class="text-[#dae2fd]/70 hover:text-[#4edea3] transition-colors duration-300 active:scale-95 transition-transform" href="#">Treatment</a>
+<a class="text-[#dae2fd]/70 hover:text-[#4edea3] transition-colors duration-300 active:scale-95 transition-transform" href="#">Membership</a>
+<a class="text-[#dae2fd]/70 hover:text-[#4edea3] transition-colors duration-300 active:scale-95 transition-transform" href="#">Routines</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#dae2fd]/70 font-medium text-sm hover:text-[#4edea3] transition-colors">Login</button>
+<button class="bg-[#4edea3] text-[#003824] px-6 py-2 rounded-xl font-bold text-sm hover:opacity-90 transition-all active:scale-95">Get Started</button>
+</div>
+<div class="bg-gradient-to-b from-[#131b2e] to-transparent h-px w-full absolute bottom-0 left-0"></div>
+</div>
+</nav>
+<section class="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-[#4edea3]/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#10b981]/5 blur-[150px] rounded-full"></div>
+</div>
+<div class="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/30 border border-outline-variant/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-secondary-container">New Clinical Release 2.0</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8 text-on-surface leading-[1.1] text-glow">
+                    AI-Powered <br/> Personalized <span class="text-primary italic">Skincare</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface/70 font-medium max-w-xl mb-10 leading-relaxed">
+                    A clinical-grade diagnostic engine in the palm of your hand. Discover your skin's nocturnal rhythm with our AI-driven Lumière analysis.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-xl font-extrabold text-lg flex items-center gap-3 shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+                        Scan Your Skin
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">scan</span>
+</button>
+<button class="border border-outline/20 text-on-surface px-10 py-5 rounded-xl font-extrabold text-lg hover:bg-surface-container-highest/40 transition-all">
+                        Ask AI
+                    </button>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale-[0.2]" data-alt="Close-up portrait of a person with glowing clear skin in soft dramatic moonlight, cool clinical atmosphere with subtle emerald lens flares" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTYMWO_7inhs4Yhqxc7_CLycl7yEkn_lL1m9G6wMlvkRoCXIViXOuD3YdufQ_1RM149mTmaRI_rvEIXCmCYGX-CIsC7zkQED0Pz78TeNEZalWVPoUuqZSHg8RaJodqSQmNxSr1doX4nehaL6P_0FD9GbmqUrKkJYhCLGSiWQY4GLLCsa4ptZ8Z9IbRB8EHbleB-8TSIWEgN6BhwfQdLRLCtr6JpoNeK-W3pWCo5cxR7EfjjRYUMb-jIcn4ThRZwOPR7XHRQ6JncAI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6 right-6 glass-card p-6 rounded-2xl border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">biotech</span>
+</div>
+<div>
+<div class="text-sm font-bold">Molecular Analysis</div>
+<div class="text-xs text-on-surface/50">99.8% Precision Accuracy</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 md:px-12 bg-surface-container-low relative">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-sm uppercase tracking-[0.2em] font-bold text-primary mb-4">Precision Science</h2>
+<h3 class="text-4xl md:text-5xl font-extrabold text-on-surface leading-tight tracking-tight">The Digital <br/>Aesthetician Protocol</h3>
+</div>
+<p class="text-on-surface/50 max-w-sm text-sm font-medium leading-relaxed">
+                    Our platform integrates cellular imaging with algorithmic dermatology to provide a sanctuary for your skin health.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="glass-card p-8 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-10 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">clinical_notes</span>
+</div>
+<h4 class="text-xl font-bold mb-4">AI Scan</h4>
+<p class="text-sm text-on-surface/60 leading-relaxed">High-resolution dermis mapping through multi-spectral smartphone imaging.</p>
+</div>
+<div class="glass-card p-8 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-10 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" style="font-variation-settings: 'FILL' 1;">forum</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Chat</h4>
+<p class="text-sm text-on-surface/60 leading-relaxed">Real-time consultation with our clinical AI specialized in ingredient synergy.</p>
+</div>
+<div class="glass-card p-8 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-10 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">routine</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Routine</h4>
+<p class="text-sm text-on-surface/60 leading-relaxed">Dynamic daily regimens that adapt to your environment and sleep cycles.</p>
+</div>
+<div class="glass-card p-8 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-10 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">monitoring</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Tracking</h4>
+<p class="text-sm text-on-surface/60 leading-relaxed">Longitudinal progress visualization using proprietary 'Glow-Score' metrics.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 md:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-extrabold text-on-surface mb-20 text-center">Clinical Results</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-6">
+<div class="aspect-square rounded-2xl overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover" data-alt="Elegant close up of a woman in soft moody lighting, highlighting smooth radiant skin, minimalist clinical aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZaijh6IGMh_7NxK4UnwNin0UQ8IH3MHKF7dn3c00Hu98YkGAV0X_hKd1aVzOUVdBFWEQQt1pTX9N9Kq1OJshR4IcvVyBPaeTzvZeHe_pRFsfbz2Lvy-HfG5qx5-0HG4lGFRneeX9zecf-13ZV9siaj1S809bp53CZXgWBUmTXhyIiabzG2lvG81d1oXxUy4ZWxZ1CLT-NcssBr2sT_DBRScMEOowzaa2y5sAuqAE560mj4cePPaspEcTmbWqMJIVEkVpie6-g2Ps"/>
+</div>
+<div class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">format_quote</div>
+<p class="text-lg italic font-light text-on-surface leading-relaxed">"The AI analysis picked up on dehydration levels that even my aesthetician missed. The nocturnal routine has transformed my morning radiance."</p>
+<div>
+<div class="font-bold text-on-surface">Elena Vance</div>
+<div class="text-xs uppercase tracking-widest text-on-surface/40">Dermatology Patient</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 md:mt-24">
+<div class="aspect-square rounded-2xl overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover" data-alt="Sophisticated man in a dark environment with soft side lighting, clear healthy skin, medical laboratory background softly blurred" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5B_HuNaR3wErFC24a6-lf5Ogq4GvkW4wSNemf7o4q-FjLrQWHtUMyuyD7phWB7QlVb7cPk5OjveGusiLX1f-Fl1p0Gv9z3Q0itL-vbnyGwL3hmX-JUV0CyK8c1HXbAhOJq6KgXukt_AYUGTURAt8IbNC9JS3mAECxmLm1QSLR2LZmJ9QSJgpWhuMpS92MvMV30cHm1NXsbN-3qFOFOXv4dHg0iQNEceFt4xRtEM9NLa1m_QZGNETNv2jprKXqhkep-9Avyii4Esc"/>
+</div>
+<div class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">format_quote</div>
+<p class="text-lg italic font-light text-on-surface leading-relaxed">"Simple, clinical, and effective. Lumière takes the guesswork out of complex skincare chemistry. It's like having a lab in my pocket."</p>
+<div>
+<div class="font-bold text-on-surface">Dr. Julian Thorne</div>
+<div class="text-xs uppercase tracking-widest text-on-surface/40">Molecular Biologist</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 md:mt-12">
+<div class="aspect-square rounded-2xl overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young person with vibrant glowing skin in a cool blue-toned nocturnal setting with emerald highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFLz5cWfOARxTOTDhlSAGdBpF5yz9d9xxR7pzt5cP7nqyfeuQCq3ejH4UYCfOr8OGxkcCrL41BNfeVcm7R9L8JjgtztRHp4suA689sc3tL5jOSTvFbr_f2EnStTt0O9S02RC8EFd8AZbI3jC9hpDFC-LKko_8hyLCne9k9VULnD9ud2SAxxhDf0nco5tBHvO0F5XrM-rDJ8R3AEmnQnD3MCthBC9anhzr6oER-YmbIGaAFS2tbUr-uOomFYHnBAYrm4NH7Ed2L6d4"/>
+</div>
+<div class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">format_quote</div>
+<p class="text-lg italic font-light text-on-surface leading-relaxed">"I finally understand why certain products weren't working. The ingredient synergy chat saved me hundreds on the wrong routine."</p>
+<div>
+<div class="font-bold text-on-surface">Sasha K.</div>
+<div class="text-xs uppercase tracking-widest text-on-surface/40">Lifestyle Creator</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-[#0b1326] w-full py-12 mt-auto flex flex-col items-center gap-6 border-t border-[#2d3449]/10">
+<div class="max-w-7xl w-full px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-bold text-[#dae2fd] text-xl">Lumière Clinical</div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Clinical Trials</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Sustainability</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface/40 cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined text-on-surface/40 cursor-pointer hover:text-primary transition-colors">science</span>
+</div>
+</div>
+<div class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 mt-8">
+            © 2024 Lumière Clinical. Sanctuary at Night Edition.
+        </div>
+</footer>
+</body></html>

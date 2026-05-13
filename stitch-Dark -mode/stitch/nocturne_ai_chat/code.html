@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumière Clinical | AI Chat Concierge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#0b1326",
+                        "surface-container-highest": "#2d3449",
+                        "surface-bright": "#31394d",
+                        "on-tertiary-fixed-variant": "#842225",
+                        "outline": "#86948a",
+                        "on-tertiary-fixed": "#410005",
+                        "primary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#283044",
+                        "tertiary-container": "#fc7c78",
+                        "secondary-container": "#334d38",
+                        "secondary": "#b0ceb4",
+                        "surface-variant": "#2d3449",
+                        "on-surface-variant": "#bbcabf",
+                        "secondary-fixed": "#cceacf",
+                        "primary-fixed": "#6ffbbe",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#002113",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-low": "#131b2e",
+                        "on-secondary-container": "#9fbca3",
+                        "background": "#0b1326",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-error": "#690005",
+                        "on-surface": "#dae2fd",
+                        "error": "#ffb4ab",
+                        "on-primary": "#003824",
+                        "surface-dim": "#0b1326",
+                        "on-secondary-fixed-variant": "#334d38",
+                        "tertiary": "#ffb3af",
+                        "error-container": "#93000a",
+                        "primary": "#4edea3",
+                        "primary-container": "#10b981",
+                        "surface-tint": "#4edea3",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary-fixed-dim": "#ffb3af",
+                        "secondary-fixed-dim": "#b0ceb4",
+                        "inverse-surface": "#dae2fd",
+                        "outline-variant": "#3c4a42",
+                        "on-primary-container": "#00422b",
+                        "on-tertiary-container": "#711419",
+                        "on-secondary-fixed": "#062010",
+                        "surface-container": "#171f33",
+                        "inverse-primary": "#006c49",
+                        "on-secondary": "#1c3623",
+                        "on-tertiary": "#650911",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-background": "#dae2fd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-sidebar {
+            backdrop-filter: blur(12px);
+            background: rgba(19, 27, 46, 0.8);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0b1326; }
+        ::-webkit-scrollbar-thumb { background: #2d3449; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#131b2e] flex flex-col p-6 gap-2 z-40">
+<div class="text-lg font-black text-[#4edea3] mb-8">Clinical Portal</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 font-['Manrope'] font-semibold text-sm text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-['Manrope'] font-semibold text-sm text-[#4edea3] bg-[#171f33] rounded-xl transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined" data-icon="clinical_notes">clinical_notes</span>
+<span>AI Analysis</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-['Manrope'] font-semibold text-sm text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>Routine Planner</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-['Manrope'] font-semibold text-sm text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined" data-icon="video_chat">video_chat</span>
+<span>Consultations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-['Manrope'] font-semibold text-sm text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+<span>Product Lab</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 font-['Manrope'] font-semibold text-sm text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Progress Tracker</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-2 pt-6 border-t border-[#2d3449]/30">
+<div class="flex items-center gap-3 px-4 py-3 mb-4">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Professional portrait of a male doctor in clinical attire with subtle warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQVI07yv-tfvSO-KWRtz_HR9OPVvQZoZ2q-Ci8OC03-OraCZoR-meCDJj-u7_ixZc4QA9YWoX02QElZdSXqRmq7IQqIzGH1V5C7LQyvU0qYhANaMgG3dpw3ccMH0M6tm0eQ97kcWlfM2OGvw91PZllTaHfgvKUhUbvLKEKfOAgpDNkK9nrT-Hy4b9_9v5dtYYejCQqzB52JjJ4hnFgxD8AjIBFeOWPZoKWI_a5SYA8HuK7TJw7_6K68g0DZvoDfIau-VJuYD_C9Fk"/>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-[#dae2fd]">Dr. Aris Thorne</span>
+<span class="text-[10px] text-[#dae2fd]/40 uppercase tracking-widest">Chief Aesthetician</span>
+</div>
+</div>
+<a class="flex items-center gap-3 px-4 py-2 font-['Manrope'] font-semibold text-sm text-[#dae2fd]/50 hover:text-[#4edea3] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 font-['Manrope'] font-semibold text-sm text-[#dae2fd]/50 hover:text-[#4edea3] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+<div class="bg-[#0b1326] w-px h-full absolute right-0 top-0"></div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 ml-64 flex flex-col h-screen relative bg-surface">
+<!-- TopAppBar -->
+<header class="w-full h-16 sticky top-0 bg-[#0b1326] flex items-center justify-between px-8 z-30">
+<div class="flex items-center gap-4 bg-[#131b2e] px-4 py-2 rounded-full border border-[#2d3449]/20 focus-within:ring-1 ring-[#4edea3]/20 transition-all">
+<span class="material-symbols-outlined text-[#4edea3] text-lg" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-[#dae2fd] placeholder-[#dae2fd]/30 w-64" placeholder="Search clinical records..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#dae2fd] hover:bg-[#2d3449] rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-[#dae2fd] hover:bg-[#2d3449] rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="h-8 w-px bg-[#2d3449]/30 mx-2"></div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-[#dae2fd]/60 uppercase tracking-widest">Active Session</span>
+<div class="w-2 h-2 rounded-full bg-[#4edea3] animate-pulse"></div>
+</div>
+</div>
+</header>
+<!-- Chat Flow Container -->
+<div class="flex-1 overflow-y-auto px-8 py-12 space-y-8 max-w-5xl mx-auto w-full">
+<!-- User Message -->
+<div class="flex justify-end">
+<div class="bg-surface-container-high text-on-surface px-6 py-4 rounded-3xl rounded-tr-sm max-w-[70%] border border-[#2d3449]/30">
+<p class="text-md font-body leading-relaxed">My skin feels extremely tight and itchy by mid-afternoon, even though I apply a thick moisturizer in the morning. Could it be TEWL?</p>
+</div>
+</div>
+<!-- AI Response -->
+<div class="flex justify-start gap-4">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="space-y-6 max-w-[85%]">
+<div class="bg-surface-container text-on-surface px-6 py-4 rounded-3xl rounded-tl-sm border-l-4 border-primary">
+<p class="text-md font-body leading-relaxed">Based on your description, you are likely experiencing significant <strong class="text-primary">Transepidermal Water Loss (TEWL)</strong>. This occurs when your skin's barrier is compromised, allowing moisture to evaporate into the atmosphere faster than your moisturizer can replenish it.</p>
+</div>
+<!-- Analysis Card -->
+<div class="bg-surface-container-low rounded-2xl p-8 border border-primary/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="biotech">biotech</span>
+</div>
+<h3 class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-4">Clinical Analysis: TEWL Dynamics</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<p class="text-sm text-on-surface-variant leading-relaxed">The "tightness" you feel is the physical contraction of the stratum corneum as it dehydrates. Applying a heavy cream alone often isn't enough if the underlying hydration is missing.</p>
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-xs font-bold uppercase">Remedy: Strategic Layering</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-[#2d3449]/30">
+<ul class="text-xs space-y-3">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-on-surface/70 font-medium">1. Humectant (Hydrate)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-on-surface/70 font-medium">2. Emollient (Repair)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-on-surface/70 font-medium">3. Occlusive (Seal)</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Recommended Products -->
+<div class="space-y-4">
+<span class="text-[10px] font-bold text-on-surface/40 uppercase tracking-[0.3em] pl-2">Prescribed Regimen</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Product 1 -->
+<div class="group bg-surface-container hover:bg-surface-container-high transition-all p-4 rounded-2xl border border-[#2d3449]/30 relative overflow-hidden">
+<div class="absolute -inset-px bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex gap-4 relative z-10">
+<div class="w-20 h-24 rounded-lg bg-[#0b1326] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Minimalist laboratory-style frosted glass dropper bottle with green liquid, professional studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpf8XoSLDRNCgkIoinxeFvoLIsEvvoyNmMVHYIcdTg_SUx9XEijrRHi57cMWYqnKnyiAPO3GtvYwfk1G-H6WdqhDLUvzgEQpitDhcnrchCmINeVhKs_X1Ux3G8qRxxk1Zd4CYmeAzPu5uLVRG_whop47PqlP5W0LeY4w6AS4dniw7VY7b49DFEw-DjhkQrNAwLbcdofX0bkjzrS8D0IZYSHtG9xIoI7ojonMX5inih1wV4DniNRylw3sORz_SF11ETheZ96NBbPeY"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<h4 class="text-sm font-bold text-on-surface">Barrier Restore Serum</h4>
+<p class="text-[10px] text-on-surface/50 mt-1 uppercase tracking-tight">Step 01: Multi-weight Hyaluronic</p>
+</div>
+<button class="text-primary text-[10px] font-bold uppercase flex items-center gap-1 group/btn">
+                                            Add to Routine
+                                            <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group bg-surface-container hover:bg-surface-container-high transition-all p-4 rounded-2xl border border-[#2d3449]/30 relative overflow-hidden">
+<div class="absolute -inset-px bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex gap-4 relative z-10">
+<div class="w-20 h-24 rounded-lg bg-[#0b1326] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Luxury skincare jar on a dark slate surface with soft emerald backlighting and water droplets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIPhOURzR40sYaXzljQQJoE4dHPNk6URzvOtGJyEVuO39ynH3rd1gURARkKQorPHILkWFo6YQbK9pTBJCx2UwfGtG-8O0GNnOiFPFtdkLuNXApl7SXMO967KAUkc7QK4VzdOwaQtjdwpur4YE22L5IwIgJnRA4BPNvFESMuaXUVU0W5yCiQevM8LZHFKRZLbe4suZHLtgtU0C6dxNpQ-AJCFqiiZp_iD9fMLF0oovf5PX3CXJSiSAVViYY68TEHEnC214yF1BM264"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div>
+<h4 class="text-sm font-bold text-on-surface">Lipid Recovery Cream</h4>
+<p class="text-[10px] text-on-surface/50 mt-1 uppercase tracking-tight">Step 02: Ceramide Complex</p>
+</div>
+<button class="text-primary text-[10px] font-bold uppercase flex items-center gap-1 group/btn">
+                                            Add to Routine
+                                            <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Input Section -->
+<footer class="p-8 w-full bg-surface border-t border-[#2d3449]/20">
+<div class="max-w-4xl mx-auto relative">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 flex gap-2">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface/40 hover:text-primary hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="upload_file">upload_file</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface/40 hover:text-primary hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="image">image</span>
+</button>
+</div>
+<input class="w-full bg-surface-container-highest/50 border border-[#2d3449]/40 rounded-2xl py-4 pl-24 pr-16 text-on-surface placeholder-on-surface/30 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-body" placeholder="Ask about your skin..." type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2">
+<button class="bg-primary text-on-primary p-2 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(78,222,163,0.3)] hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+<p class="text-[10px] text-center text-on-surface/20 mt-4 font-label uppercase tracking-widest">Powered by Lumière Aesthetic Intelligence — For clinical guidance only</p>
+</div>
+</footer>
+</main>
+</body></html>

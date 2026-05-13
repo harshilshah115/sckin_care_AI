@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumière Clinical | Profile Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#0b1326",
+            "surface-container-highest": "#2d3449",
+            "surface-bright": "#31394d",
+            "on-tertiary-fixed-variant": "#842225",
+            "outline": "#86948a",
+            "on-tertiary-fixed": "#410005",
+            "primary-fixed-dim": "#4edea3",
+            "inverse-on-surface": "#283044",
+            "tertiary-container": "#fc7c78",
+            "secondary-container": "#334d38",
+            "secondary": "#b0ceb4",
+            "surface-variant": "#2d3449",
+            "on-surface-variant": "#bbcabf",
+            "secondary-fixed": "#cceacf",
+            "primary-fixed": "#6ffbbe",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed": "#002113",
+            "surface-container-high": "#222a3d",
+            "surface-container-low": "#131b2e",
+            "on-secondary-container": "#9fbca3",
+            "background": "#0b1326",
+            "on-primary-fixed-variant": "#005236",
+            "on-error": "#690005",
+            "on-surface": "#dae2fd",
+            "error": "#ffb4ab",
+            "on-primary": "#003824",
+            "surface-dim": "#0b1326",
+            "on-secondary-fixed-variant": "#334d38",
+            "tertiary": "#ffb3af",
+            "error-container": "#93000a",
+            "primary": "#4edea3",
+            "primary-container": "#10b981",
+            "surface-tint": "#4edea3",
+            "surface-container-lowest": "#060e20",
+            "tertiary-fixed-dim": "#ffb3af",
+            "secondary-fixed-dim": "#b0ceb4",
+            "inverse-surface": "#dae2fd",
+            "outline-variant": "#3c4a42",
+            "on-primary-container": "#00422b",
+            "on-tertiary-container": "#711419",
+            "on-secondary-fixed": "#062010",
+            "surface-container": "#171f33",
+            "inverse-primary": "#006c49",
+            "on-secondary": "#1c3623",
+            "on-tertiary": "#650911",
+            "tertiary-fixed": "#ffdad7",
+            "on-background": "#dae2fd"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Manrope', sans-serif; background-color: #0b1326; color: #dae2fd; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .glass-panel { background: rgba(45, 52, 73, 0.6); backdrop-filter: blur(20px); }
+  </style>
+</head>
+<body class="bg-surface overflow-x-hidden">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#131b2e] flex flex-col p-6 gap-2 z-40 border-r border-[#0b1326] relative">
+<div class="text-lg font-black text-[#4edea3] mb-8 font-headline">Clinical Portal</div>
+<div class="flex flex-col gap-1 mb-auto">
+<div class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 font-['Manrope'] font-semibold text-sm hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 font-['Manrope'] font-semibold text-sm hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="clinical_notes">clinical_notes</span>
+<span>AI Analysis</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 font-['Manrope'] font-semibold text-sm hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>Routine Planner</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 font-['Manrope'] font-semibold text-sm hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="video_chat">video_chat</span>
+<span>Consultations</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 font-['Manrope'] font-semibold text-sm hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+<span>Product Lab</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 font-['Manrope'] font-semibold text-sm hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Progress Tracker</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 font-['Manrope'] font-semibold text-sm hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Community</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#4edea3] bg-[#171f33] rounded-xl font-['Manrope'] font-semibold text-sm transition-all duration-200 ease-in-out cursor-pointer group">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 border-t border-[#2d3449]/30 pt-4">
+<div class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 font-['Manrope'] font-semibold text-sm hover:bg-[#171f33] hover:text-[#dae2fd] cursor-pointer">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 font-['Manrope'] font-semibold text-sm hover:bg-[#171f33] hover:text-[#dae2fd] cursor-pointer">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</div>
+</div>
+<div class="absolute right-0 top-0 w-px h-full bg-[#0b1326]"></div>
+</aside>
+<!-- TopAppBar Anchor -->
+<header class="w-[calc(100%-256px)] ml-64 h-16 fixed top-0 z-30 flex items-center justify-between px-8 bg-[#0b1326]">
+<div class="relative w-96">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+</div>
+<input class="bg-[#131b2e] border-none rounded-full py-2 pl-10 pr-4 text-sm w-full focus:ring-1 ring-[#4edea3]/20 placeholder-[#dae2fd]/30" placeholder="Search analytics..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#2d3449] rounded-full text-[#dae2fd] transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#2d3449] rounded-full text-[#dae2fd] transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-[#4edea3]/20 ml-2">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of Elena Richardson, a professional woman with a calm expression in a modern clinical office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7t7Y_rGuVoVcDDJgZqJxTOFUykNjYniuta1zdZz9bBIiuOcnSyOvNnRuh0ArtL00t721NoUDV-ZEmuEa48RuNPQvz1fri9nebnOs6JYDECnI3RAcpmvIzcokOWUxlnqU-OEsd5E-EYbnqBNIVf3Il1MtCzof6bdjPKkPAAXVMuI6Xd3ybP21dhhV9zgBxbGEvQSP8BIxXZ9JltblBfIr5r0ZhGlcRh02hgdvSsoUzw_QvYfBl_-TQo-QH1I8lU97JZnZ6yO-hrxY"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 mt-16 p-12 min-h-screen">
+<div class="max-w-6xl mx-auto">
+<!-- Profile Header Section -->
+<section class="mb-12 flex flex-col md:flex-row items-center gap-10">
+<div class="relative group">
+<div class="w-48 h-48 rounded-2xl overflow-hidden shadow-2xl ring-4 ring-[#4edea3]/10">
+<img class="w-full h-full object-cover" data-alt="professional portrait of Elena Richardson with glowing skin and a serene expression, against a dark soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKbQODg9yy_d9iBAJr63QII0hpuUPzfD5q3JIkJc9PiCatHMvYO9NzlF-bHYmhh6HvQ-Dj7PeFHYiW_H2QYErbePBdnnXU6lsbq3KXgLqyAbrRxSh_EjPkVGvVJk_urRXCHXW2R-WDH4VfuMFdPi49s1MpUYBVOYnf6ONd-1TIEAXhwKP-uGye5KoH_1aLV383RSl9ZiivIg_sAGnHQFjcIg7A0mvKqoHygMAqomJrOMgYPOybjudbRsuH421z_2l4pt9KxKmUufg"/>
+</div>
+<button class="absolute bottom-[-12px] right-[-12px] bg-primary text-on-primary p-3 rounded-xl shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="camera">camera</span>
+</button>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h1 class="text-4xl font-extrabold font-headline tracking-tight text-on-surface mb-2">Elena Richardson</h1>
+<p class="text-on-surface-variant text-lg font-medium tracking-wide">Patient ID: #LR-9928-CLN</p>
+<div class="mt-4 flex flex-wrap justify-center md:justify-start gap-3">
+<span class="px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label uppercase tracking-widest">Premium Member</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-primary rounded-full text-xs font-label uppercase tracking-widest">Next Scan: 3 Days</span>
+</div>
+</div>
+</section>
+<!-- Settings Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Account Details -->
+<div class="lg:col-span-7 bg-surface-container-low p-8 rounded-xl relative overflow-hidden">
+<h2 class="text-xl font-bold mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+            Account Details
+          </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-1">
+<label class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant/60">Full Name</label>
+<div class="bg-surface-container-highest/40 border-b border-outline-variant/20 py-2 text-on-surface font-medium">Elena Richardson</div>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant/60">Email Address</label>
+<div class="bg-surface-container-highest/40 border-b border-outline-variant/20 py-2 text-on-surface font-medium">elena.richardson@clinical.com</div>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant/60">Date of Birth</label>
+<div class="bg-surface-container-highest/40 border-b border-outline-variant/20 py-2 text-on-surface font-medium">October 14, 1992</div>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant/60">Clinical Location</label>
+<div class="bg-surface-container-highest/40 border-b border-outline-variant/20 py-2 text-on-surface font-medium" data-location="London" style="">Harley Street Clinic, London</div>
+</div>
+</div>
+<div class="mt-8">
+<button class="text-primary text-sm font-semibold hover:underline underline-offset-4 flex items-center gap-2">
+              Edit personal information <span class="material-symbols-outlined text-xs" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+<!-- Biological Profile -->
+<div class="lg:col-span-5 bg-surface-container p-8 rounded-xl border border-primary/5">
+<h2 class="text-xl font-bold mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="biotech">biotech</span>
+            Skin Biological Profile
+          </h2>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low">
+<span class="text-sm font-medium text-on-surface-variant">Type</span>
+<span class="text-primary font-bold">Combination/Reactive</span>
+</div>
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low">
+<span class="text-sm font-medium text-on-surface-variant">Sensitivity</span>
+<span class="text-tertiary font-bold">Moderate</span>
+</div>
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low">
+<span class="text-sm font-medium text-on-surface-variant">Core Concern</span>
+<span class="text-primary-fixed font-bold">Hyperpigmentation</span>
+</div>
+<div class="pt-4">
+<div class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant/60 mb-2">Molecular Health Score</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[84%] shadow-[0_0_8px_#4edea3]"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-medium">
+<span>84/100 Optimal Range</span>
+<span>Updated 2h ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interface Preferences -->
+<div class="lg:col-span-12 bg-surface-container-low p-8 rounded-xl">
+<h2 class="text-xl font-bold mb-8 flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+            Interface Preferences
+          </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="flex items-center justify-between">
+<div>
+<div class="font-bold">Dark Mode</div>
+<div class="text-xs text-on-surface-variant/60">Always on sanctuary theme</div>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative flex items-center justify-end px-1 cursor-pointer">
+<div class="w-4 h-4 bg-on-primary rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<div class="font-bold">Notifications</div>
+<div class="text-xs text-on-surface-variant/60">Analysis ready &amp; Reminders</div>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative flex items-center justify-end px-1 cursor-pointer">
+<div class="w-4 h-4 bg-on-primary rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<div class="font-bold">Biometric Login</div>
+<div class="text-xs text-on-surface-variant/60">FaceID / Fingerprint</div>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative flex items-center justify-start px-1 cursor-pointer border border-outline/20">
+<div class="w-4 h-4 bg-on-surface-variant rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recalibrate CTA Card -->
+<div class="lg:col-span-12 mt-8">
+<div class="relative glass-panel rounded-2xl p-10 overflow-hidden border border-primary/20 group">
+<div class="absolute top-0 right-0 p-8 text-primary/10">
+<span class="material-symbols-outlined text-[120px]" data-icon="refresh">refresh</span>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h3 class="text-3xl font-extrabold font-headline mb-4">Recalibrate Analysis Engine</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Your skin biological profile is currently based on data from 12 days ago. For maximum clinical efficacy, we recommend a high-resolution recalibration scan of your dermal layers.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-3 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="center_focus_strong">center_focus_strong</span>
+                  Start New Session
+                </button>
+<button class="border border-outline/20 text-on-surface px-8 py-4 rounded-xl font-bold hover:bg-surface-container transition-colors">
+                  View Previous Trends
+                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions Footer -->
+<div class="mt-20 pt-8 border-t border-[#2d3449]/30 flex flex-col items-center gap-6">
+<button class="flex items-center gap-3 text-on-tertiary-fixed-variant hover:text-error transition-colors font-bold uppercase text-xs tracking-[0.2em]">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+          Sign Out of Sanctuary Portal
+        </button>
+<div class="text-[#dae2fd]/40 font-['Manrope'] text-xs uppercase tracking-[0.05em] text-center">
+          © 2024 Lumière Clinical. Sanctuary at Night Edition.
+          <div class="mt-4 flex gap-8 justify-center">
+<a class="hover:text-[#4edea3] underline transition-all" href="#">Privacy Policy</a>
+<a class="hover:text-[#4edea3] underline transition-all" href="#">Terms of Service</a>
+<a class="hover:text-[#4edea3] underline transition-all" href="#">Clinical Trials</a>
+<a class="hover:text-[#4edea3] underline transition-all" href="#">Sustainability</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

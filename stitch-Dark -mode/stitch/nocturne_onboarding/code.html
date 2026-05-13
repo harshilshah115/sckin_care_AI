@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumière Nocturne | Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#0b1326",
+                        "surface-container-highest": "#2d3449",
+                        "surface-bright": "#31394d",
+                        "on-tertiary-fixed-variant": "#842225",
+                        "outline": "#86948a",
+                        "on-tertiary-fixed": "#410005",
+                        "primary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#283044",
+                        "tertiary-container": "#fc7c78",
+                        "secondary-container": "#334d38",
+                        "secondary": "#b0ceb4",
+                        "surface-variant": "#2d3449",
+                        "on-surface-variant": "#bbcabf",
+                        "secondary-fixed": "#cceacf",
+                        "primary-fixed": "#6ffbbe",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#002113",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-low": "#131b2e",
+                        "on-secondary-container": "#9fbca3",
+                        "background": "#0b1326",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-error": "#690005",
+                        "on-surface": "#dae2fd",
+                        "error": "#ffb4ab",
+                        "on-primary": "#003824",
+                        "surface-dim": "#0b1326",
+                        "on-secondary-fixed-variant": "#334d38",
+                        "tertiary": "#ffb3af",
+                        "error-container": "#93000a",
+                        "primary": "#4edea3",
+                        "primary-container": "#10b981",
+                        "surface-tint": "#4edea3",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary-fixed-dim": "#ffb3af",
+                        "secondary-fixed-dim": "#b0ceb4",
+                        "inverse-surface": "#dae2fd",
+                        "outline-variant": "#3c4a42",
+                        "on-primary-container": "#00422b",
+                        "on-tertiary-container": "#711419",
+                        "on-secondary-fixed": "#062010",
+                        "surface-container": "#171f33",
+                        "inverse-primary": "#006c49",
+                        "on-secondary": "#1c3623",
+                        "on-tertiary": "#650911",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-background": "#dae2fd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .glass-card {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .active-card {
+            border: 2px solid #4edea3;
+            box-shadow: inset 0 0 15px rgba(78, 222, 163, 0.15), 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center selection:bg-primary/30">
+<header class="w-full max-w-5xl px-8 pt-12 pb-8 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<span class="text-xl font-bold tracking-tight text-[#dae2fd] font-headline">Lumière Clinical</span>
+<span class="font-label text-xs uppercase tracking-[0.1em] text-on-surface/50">Step 1 of 3</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-1/3 h-full bg-primary shadow-[0_0_8px_rgba(78,222,163,0.6)]"></div>
+</div>
+</header>
+<main class="w-full max-w-5xl px-8 flex flex-col md:flex-row gap-12 mb-24">
+<div class="flex-1 space-y-12">
+<div class="space-y-2">
+<h1 class="text-[3.5rem] font-extrabold leading-none tracking-tight font-headline text-on-surface">Tell us about your skin</h1>
+<p class="text-on-surface/60 text-lg max-w-md">Our clinical AI adapts your nocturnal ritual based on your biological skin profile.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="glass-card p-6 rounded-xl border border-white/5 cursor-pointer hover:border-primary/50 transition-all duration-300 group">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 bg-surface rounded-lg text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl">water_drop</span>
+</div>
+</div>
+<h3 class="text-on-surface font-bold text-lg mb-1">Oily</h3>
+<p class="text-on-surface/50 text-sm leading-relaxed">Visible shine and enlarged pores, primarily in the T-zone.</p>
+</div>
+<div class="glass-card p-6 rounded-xl border border-white/5 cursor-pointer active-card group">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 bg-surface rounded-lg text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl">dry_cleaning</span>
+</div>
+<div class="bg-primary/20 px-2 py-1 rounded text-[10px] font-bold text-primary tracking-widest uppercase">Selected</div>
+</div>
+<h3 class="text-on-surface font-bold text-lg mb-1">Dry</h3>
+<p class="text-on-surface/50 text-sm leading-relaxed">Feelings of tightness, occasional flaking or rough texture.</p>
+</div>
+<div class="glass-card p-6 rounded-xl border border-white/5 cursor-pointer hover:border-primary/50 transition-all duration-300 group">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 bg-surface rounded-lg text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl">gradient</span>
+</div>
+</div>
+<h3 class="text-on-surface font-bold text-lg mb-1">Combination</h3>
+<p class="text-on-surface/50 text-sm leading-relaxed">Oily T-zone paired with normal to dry cheek areas.</p>
+</div>
+<div class="glass-card p-6 rounded-xl border border-white/5 cursor-pointer hover:border-primary/50 transition-all duration-300 group">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 bg-surface rounded-lg text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl">health_metrics</span>
+</div>
+</div>
+<h3 class="text-on-surface font-bold text-lg mb-1">Sensitive</h3>
+<p class="text-on-surface/50 text-sm leading-relaxed">Easily irritated by environmental factors or products.</p>
+</div>
+</div>
+</div>
+<aside class="w-full md:w-80 space-y-6">
+<div class="bg-surface-container-low rounded-xl p-8 border-l-4 border-primary/40 relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">science</span>
+<span class="font-label text-[10px] uppercase tracking-[0.15em] text-primary font-bold">Scientific Insight</span>
+</div>
+<h4 class="text-on-surface font-bold text-base mb-4 leading-snug">Dermal Genetics &amp; Nocturnal Recovery</h4>
+<p class="text-on-surface/60 text-sm leading-relaxed mb-6">
+                    Skin type is predominantly determined by genetics and the activity level of your sebaceous glands. During the nocturnal cycle, your skin's permeability increases, making the selection of bio-compatible formulas critical for cellular repair.
+                </p>
+<div class="aspect-square w-full rounded-lg bg-surface-container-highest flex items-center justify-center relative overflow-hidden group">
+<img alt="Microscopic view of skin cells" class="object-cover w-full h-full opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="abstract microscopic close-up of human skin cells with elegant teal lighting and cinematic shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIiWhOKK7FOsQCz9QzYEiF21J6UI_t_pQYvgCNl7u2zIgdSbyseVrh_ZcS-sBL7HJEgT7RyWKikqW_vN_I8L_P0dD5M0MVwAZDytRkKnCzJu9Qa9zW_lnpF4lXhxRWEhB3NaCvJjiwpBRbMfu1hZJ1Y9kTRzfovMZVOeCHiPK_RyvYalrb6ForqKKESkqVwUrHBtGKqxe6v_zmvF8QY0a0n8OmqUv3axW8robGX76sISRNXR7oYaMyEnI0N9sLShRild080u9TYcc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="text-[10px] text-on-surface/40 font-mono italic">Fig 1.2: Lipid Barrier Analysis</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest/50 rounded-xl flex items-center gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg">verified_user</span>
+</div>
+<p class="text-xs text-on-surface/40 leading-tight">
+                    Your data is processed locally for maximum clinical privacy.
+                </p>
+</div>
+</aside>
+</main>
+<footer class="fixed bottom-0 left-0 w-full bg-surface/80 backdrop-blur-xl py-6 px-8 border-t border-white/5">
+<div class="max-w-5xl mx-auto flex items-center justify-between">
+<button class="font-label text-sm font-semibold text-on-surface/40 hover:text-on-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">arrow_back_ios</span>
+                Go Back
+            </button>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-bold text-sm tracking-wide shadow-[0_8px_24px_rgba(78,222,163,0.2)] active:scale-95 transition-all duration-200 hover:shadow-[0_12px_32px_rgba(78,222,163,0.3)] hover:-translate-y-0.5">
+                Next Step
+            </button>
+</div>
+</footer>
+</body></html>

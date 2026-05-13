@@ -1,0 +1,107 @@
+# -----------------------------
+# Global / OS / Editor
+# -----------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------------------
+# Secrets & Credentials
+# -----------------------------
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.*
+credentials.*
+
+# Common config locations that may contain secrets
+config/*.env
+config/**/*.env
+config/*.json
+config/**/*.json
+config/*.yaml
+config/**/*.yaml
+config/*.yml
+config/**/*.yml
+
+# Keep safe templates/examples tracked
+!.env.example
+!**/.env.example
+
+# -----------------------------
+# Python / Django
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Django runtime files
+backend/db.sqlite3
+backend/db.sqlite3-journal
+backend/media/
+backend/staticfiles/
+backend/logs/
+backend/*.log
+backend/temp*.txt
+
+# -----------------------------
+# Node / Frontend
+# -----------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.*
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# -----------------------------
+# Project-specific temp/test artifacts
+# -----------------------------
+backend/test_ai.html
+backend/temp_gemini.py
+backend/temp_out.txt
+backend/temp_logs.txt
+backend/temp.txt
+
+# -----------------------------
+# Archives / generated bundles
+# -----------------------------
+*.zip
+*.tar
+*.gz
+*.rar
+
+# -----------------------------
+# stitch-dark-mode
+stitch-Dark-mode/
+stitch-light-mode/
+

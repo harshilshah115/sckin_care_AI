@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#0b1326",
+                        "surface-container-highest": "#2d3449",
+                        "surface-bright": "#31394d",
+                        "on-tertiary-fixed-variant": "#842225",
+                        "outline": "#86948a",
+                        "on-tertiary-fixed": "#410005",
+                        "primary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#283044",
+                        "tertiary-container": "#fc7c78",
+                        "secondary-container": "#334d38",
+                        "secondary": "#b0ceb4",
+                        "surface-variant": "#2d3449",
+                        "on-surface-variant": "#bbcabf",
+                        "secondary-fixed": "#cceacf",
+                        "primary-fixed": "#6ffbbe",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#002113",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-low": "#131b2e",
+                        "on-secondary-container": "#9fbca3",
+                        "background": "#0b1326",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-error": "#690005",
+                        "on-surface": "#dae2fd",
+                        "error": "#ffb4ab",
+                        "on-primary": "#003824",
+                        "surface-dim": "#0b1326",
+                        "on-secondary-fixed-variant": "#334d38",
+                        "tertiary": "#ffb3af",
+                        "error-container": "#93000a",
+                        "primary": "#4edea3",
+                        "primary-container": "#10b981",
+                        "surface-tint": "#4edea3",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary-fixed-dim": "#ffb3af",
+                        "secondary-fixed-dim": "#b0ceb4",
+                        "inverse-surface": "#dae2fd",
+                        "outline-variant": "#3c4a42",
+                        "on-primary-container": "#00422b",
+                        "on-tertiary-container": "#711419",
+                        "on-secondary-fixed": "#062010",
+                        "surface-container": "#171f33",
+                        "inverse-primary": "#006c49",
+                        "on-secondary": "#1c3623",
+                        "on-tertiary": "#650911",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-background": "#dae2fd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(45, 52, 73, 0.6); backdrop-filter: blur(20px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/60 backdrop-blur-xl shadow-[0px_10px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-12 py-4 w-full">
+<div class="text-xl font-bold tracking-tight text-[#dae2fd]">Lumière Clinical</div>
+<div class="hidden md:flex gap-8 font-['Manrope'] font-medium text-sm tracking-wide">
+<a class="text-[#dae2fd]/70 hover:text-[#4edea3] transition-colors duration-300" href="#">Science</a>
+<a class="text-[#dae2fd]/70 hover:text-[#4edea3] transition-colors duration-300" href="#">Treatment</a>
+<a class="text-[#dae2fd]/70 hover:text-[#4edea3] transition-colors duration-300" href="#">Membership</a>
+<a class="text-[#dae2fd]/70 hover:text-[#4edea3] transition-colors duration-300" href="#">Routines</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="font-['Manrope'] font-medium text-sm text-[#dae2fd]/70 hover:text-[#4edea3] transition-colors">Login</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-semibold text-sm active:scale-95 transition-transform">Get Started</button>
+</div>
+</div>
+<div class="bg-gradient-to-b from-[#131b2e] to-transparent h-px w-full absolute bottom-0"></div>
+</nav>
+<main class="pt-24 pb-32 max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Header Section -->
+<header class="mb-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="label-md uppercase tracking-[0.05em] text-primary mb-4 block">Personalized Recommendations</span>
+<h1 class="text-5xl md:text-6xl font-bold tracking-tight leading-tight">The Sanctuary Prescription</h1>
+<p class="mt-6 text-lg text-on-surface-variant font-light leading-relaxed">
+                        Based on your nocturnal profile and dermal assessment, our clinical algorithm has synthesized a curated pathway of botanical extracts, advanced cosmetic formulations, and clinical-grade interventions.
+                    </p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low px-6 py-4 rounded-xl text-center">
+<span class="block text-primary font-bold text-2xl">84%</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant">Skin Score</span>
+</div>
+<div class="bg-surface-container-low px-6 py-4 rounded-xl text-center">
+<span class="block text-primary font-bold text-2xl">Phase 3</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant">Progression</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Section: Natural Remedies -->
+<section class="mb-24">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-semibold tracking-tight">Natural Remedies</h2>
+<div class="h-px flex-grow mx-8 bg-surface-container-highest opacity-30"></div>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container rounded-full p-2">trending_flat</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Aloe Vera Card -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container transition-all duration-500">
+<div class="aspect-[16/9] w-full relative overflow-hidden">
+<img alt="Aloe Vera" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Close up of fresh green aloe vera plant leaves with crystal clear juice droplets against a dark clinical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsW-hblDcdS2jnWujby6ZiV1Re98GDIdZh-6-2-Hd-RVuu-z2c7tGWvtP6Sn8tfhkJ5cQNINOqiKA83Qbfb-yNw66jCFM4xveUORwqjUjafMNJyXgTKuuV5MndM4pMjpXEZSm3BgkU4b0nM7bs1-fGPEy9aH42ySletIVfXqtJdGwBKRr3IFX2penXqLWy9rWxYYc_SRtNpTVy3S517Ls7-0PLyKfRW5URQ4vZc--mnol6keUmIN0i4P0m3V57T8YI6ZVcnidF-vs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<button class="absolute top-4 right-4 bg-surface/40 backdrop-blur-md p-2 rounded-full hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface">bookmark</span>
+</button>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] uppercase tracking-widest px-2 py-1 rounded-full mb-2 inline-block">Botanical</span>
+<h3 class="text-2xl font-bold">Pure Aloe Vera</h3>
+</div>
+<span class="text-primary font-medium">$24.00</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Sourced from volcanic soil, our stabilized aloe gel provides instant nocturnal cooling and repairs the lipid barrier during rest.</p>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant">Compatibility:</span>
+<span class="bg-surface-container-highest text-on-surface text-xs px-3 py-1 rounded-full">All Skin Types</span>
+<span class="bg-surface-container-highest text-on-surface text-xs px-3 py-1 rounded-full">Sensitive</span>
+</div>
+</div>
+</div>
+<!-- Manuka Honey Card -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container transition-all duration-500">
+<div class="aspect-[16/9] w-full relative overflow-hidden">
+<img alt="Manuka Honey" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Golden rich liquid manuka honey drizzling from a wooden dipper in soft cinematic low light with deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxtE2RdjEldXx8-SLsfLZMfp01SfTVllIyOUP4Hwf4QouhqmRJuySy58MMsSPo6lOtl72ZjfGrVOKDpdZ72JScjTdhDB0873hsiTb8IHQeeUGCCi9r5tvM-ozZ5jnNgMGpEr5mPmyT3shKCbiTi8UMgGXZ-VSN6eBiaq0x4fcZavQmda9Xs6CR37vWQ3qnwB4g7FLH7jivpEiZuVVOmY6qJavrWuVNkRVWPLgit0s33qR6XH5i34Ds6axaUCrrAhEryvNndYZQi6Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<button class="absolute top-4 right-4 bg-surface/40 backdrop-blur-md p-2 rounded-full hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-on-surface">bookmark</span>
+</button>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] uppercase tracking-widest px-2 py-1 rounded-full mb-2 inline-block">Medicinal</span>
+<h3 class="text-2xl font-bold">UMF 20+ Manuka</h3>
+</div>
+<span class="text-primary font-medium">$85.00</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">High-potency medicinal honey for targeted blemish reduction and intense enzymatic exfoliation while you sleep.</p>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant">Compatibility:</span>
+<span class="bg-surface-container-highest text-on-surface text-xs px-3 py-1 rounded-full">Dry</span>
+<span class="bg-surface-container-highest text-on-surface text-xs px-3 py-1 rounded-full">Blemish-Prone</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Cosmetic Products (Editorial Bento Grid) -->
+<section class="mb-24">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
+<div>
+<h2 class="text-3xl font-bold tracking-tight">Cosmetic Formulations</h2>
+<p class="text-on-surface-variant mt-2">Precision engineered molecular solutions for aesthetic enhancement.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-3 border border-outline-variant/30 rounded-full hover:border-primary transition-colors"><span class="material-symbols-outlined">filter_list</span></button>
+<button class="p-3 border border-outline-variant/30 rounded-full hover:border-primary transition-colors"><span class="material-symbols-outlined">search</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Hyaluronic Mist - Large Card -->
+<div class="md:col-span-2 group relative bg-surface-container rounded-xl overflow-hidden flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+<img alt="Hyaluronic Mist" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A translucent frosted glass bottle of facial mist standing on a reflective dark blue surface with subtle water ripples" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJniuutOtc6ewTEb5muZ54AQ-c10bM3Pbo1pMpJ3rJHCYGuOYIddB7iCOnZMaQrA4Azo3EAvnI2bBeB_ijxSG6gbVxYkhFc-ZTCPCl1SZ46QT2YdMie0McXzWWOBFJSnHi0mGsQSX89QvW8cEhkOArFtG4uRI_YY4XI1in1jZ3cUbUmbOhFN7HN07Tlyl-XroQhRAmV6A-BXyKUrwy0_x3my1eQcpfvwuFynSwr7uhOFasnFt1aSBkfHXjYV5ZasY_7HwfGAoudkQ"/>
+</div>
+<div class="md:w-1/2 p-10 flex flex-col justify-center">
+<span class="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Best Seller</span>
+<h3 class="text-3xl font-bold mb-4 leading-tight">Hyaluronic Deep Mist</h3>
+<p class="text-on-surface-variant font-light mb-8 italic">"A micro-molecular deluge for the skin's thirst."</p>
+<div class="flex items-center gap-6 mb-8">
+<span class="text-2xl font-light">$62</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[#4edea3] text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-medium">4.9</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                            Add to Routine <span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+</div>
+<!-- Ceramide Enclave Card -->
+<div class="group relative bg-surface-container rounded-xl overflow-hidden p-8 flex flex-col justify-between">
+<div>
+<div class="w-full aspect-square rounded-lg mb-6 overflow-hidden">
+<img alt="Ceramide Cream" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Luxurious thick white facial cream in a dark minimalist jar with elegant silver lettering in soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF6OAQBzPPZ_8MlAGEJ-8zZyOE9Xbixn1BFmCtYJTGbFrXXFNyR_5W-pG5ePdmuVzEckhZjRbqm8gsoebTvZomlAv-6cp938eqyceWvUcMDZVO3OTmSBfaK0k83zM19WW_E4um3RNCtVKlBaeT7XGy8sGt2zJAwvLrzfjYxQ1nGEUyCdTb09kba-W9cV5qXjPRcvOZt-ArYe7rvVctKjJfHtzTrWpozXAgRdqKCn-Gyh4vSkNyhHgmOvoeSLtMc1etWoCq30BgPts"/>
+</div>
+<h3 class="text-xl font-bold mb-2">Ceramide Enclave</h3>
+<p class="text-on-surface-variant text-sm font-light">Advanced lipid restructuring cream for 24-hour moisture retention.</p>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<span class="text-primary font-bold">$118</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">favorite</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: OTC Suggestions (Safety Focused) -->
+<section>
+<div class="flex items-center gap-4 mb-12">
+<span class="material-symbols-outlined text-primary text-4xl">verified_user</span>
+<div>
+<h2 class="text-3xl font-bold tracking-tight">Clinical OTC</h2>
+<p class="text-on-surface-variant">Pharmacist-recommended active interventions for targeted correction.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Hydrocortisone -->
+<div class="flex flex-col md:flex-row gap-8 items-center bg-surface-container-low p-8 rounded-xl border-l-4 border-primary">
+<div class="w-32 h-32 flex-shrink-0 bg-surface rounded-full flex items-center justify-center border border-outline-variant/10 shadow-xl">
+<span class="material-symbols-outlined text-primary text-5xl">medical_services</span>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h3 class="text-2xl font-bold">Hydrocortisone 1%</h3>
+<span class="bg-[#842225]/20 text-[#fc7c78] text-[9px] font-bold px-2 py-1 rounded-md uppercase tracking-widest border border-[#842225]/30">Active Drug</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6">Temporary relief for nocturnal inflammation and irritation. Use only as spot treatment for maximum 7 days.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-2 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xs">check_circle</span>
+                                Fragrance Free
+                            </div>
+<div class="flex items-center gap-2 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xs">check_circle</span>
+                                Non-Comedogenic
+                            </div>
+</div>
+</div>
+</div>
+<!-- Benzoyl Peroxide -->
+<div class="flex flex-col md:flex-row gap-8 items-center bg-surface-container-low p-8 rounded-xl border-l-4 border-primary">
+<div class="w-32 h-32 flex-shrink-0 bg-surface rounded-full flex items-center justify-center border border-outline-variant/10 shadow-xl">
+<span class="material-symbols-outlined text-primary text-5xl">science</span>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h3 class="text-2xl font-bold">Benzoyl Peroxide</h3>
+<span class="bg-[#842225]/20 text-[#fc7c78] text-[9px] font-bold px-2 py-1 rounded-md uppercase tracking-widest border border-[#842225]/30">Active Drug</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6">Potent anti-bacterial agent to eliminate deep-seated acne pathogens. May cause temporary dryness.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-2 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xs">warning</span>
+                                High Potency
+                            </div>
+<div class="flex items-center gap-2 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xs">check_circle</span>
+                                Clinical Grade
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b1326] w-full py-12 mt-auto flex flex-col items-center gap-6 border-t border-[#2d3449]/10">
+<div class="font-bold text-[#dae2fd]">Lumière Clinical</div>
+<div class="flex flex-wrap justify-center gap-8 px-6">
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Clinical Trials</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Sustainability</a>
+</div>
+<p class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40">© 2024 Lumière Clinical. Sanctuary at Night Edition.</p>
+</footer>
+<!-- SideNavBar (Hidden on desktop, logic representation) -->
+<aside class="hidden lg:flex flex-col p-6 gap-2 h-screen w-64 fixed left-0 top-0 bg-[#131b2e] font-['Manrope'] font-semibold text-sm border-r border-[#0b1326]">
+<div class="text-lg font-black text-[#4edea3] mb-8">Clinical Portal</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">clinical_notes</span> AI Analysis
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#4edea3] bg-[#171f33] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">calendar_today</span> Routine Planner
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">video_chat</span> Consultations
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">science</span> Product Lab
+            </a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<a class="flex items-center gap-4 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">help</span> Support
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">logout</span> Sign Out
+            </a>
+</div>
+</aside>
+</body></html>

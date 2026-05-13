@@ -1,0 +1,68 @@
+Analyze the provided skin image carefully.
+
+Return a structured JSON response with the following:
+
+{
+  "image_quality": {
+    "lighting": "good | average | poor",
+    "blur": "low | medium | high",
+    "angle": "frontal | tilted | partial",
+    "confidence": 0-100
+  },
+  "skin_score": 0-100,
+  "skin_type_detected": {
+    "type": "oily | dry | combination | normal | sensitive",
+    "confidence": 0-100
+  },
+  "metrics": {
+    "oiliness": 0-100,
+    "hydration": 0-100,
+    "texture": 0-100,
+    "pore_visibility": 0-100,
+    "pigmentation": 0-100,
+    "overall_health": 0-100
+  },
+  "face_zones": {
+    "forehead": {},
+    "cheeks": {},
+    "nose": {},
+    "chin": {}
+  },
+  "detected_issues": [
+    {
+      "name": "string",
+      "severity": "mild | moderate | severe",
+      "confidence": 0-100
+    }
+  ],
+  "insights": [
+    "Explain WHY issues might be occurring (environment, habits, skin biology)"
+  ],
+  "risk_flags": [
+    "barrier_damage",
+    "acne_risk",
+    "pigmentation_risk",
+    "dehydration_risk"
+  ],
+  "recommendations": {
+    "natural": [],
+    "otc_ingredients": [],
+    "products": [],
+    "lifestyle": []
+  },
+  "routine": {
+    "morning": [],
+    "night": [],
+    "weekly": []
+  },
+  "alerts": [
+    "Include at least one important caution or professional advice if needed"
+  ]
+}
+
+RULES:
+- Only include visible zones; omit if not visible
+- Be realistic with confidence scores
+- Avoid generic responses
+- Do not default everything to “normal”
+- If image quality is poor, reflect it clearly

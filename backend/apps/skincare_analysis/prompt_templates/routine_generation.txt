@@ -1,0 +1,47 @@
+<<SYSTEM_PROMPT>>
+
+Create a personalized skincare routine for:
+- Skin Type: <<SKIN_TYPE>>
+- Concerns: <<CONCERNS>>
+- Plan Length (days): <<PLAN_DAYS>>
+- Age Group: <<AGE_GROUP>>
+- Sensitivity: <<SENSITIVITY>>
+- Allergies: <<ALLERGIES>>
+- Latest Scan Summary: <<SCAN_SUMMARY>>
+- Recent Q&A Summary: <<QUESTION_SUMMARY>>
+
+Your response MUST be in this exact JSON format:
+
+{
+  "morning_routine": [
+    {
+      "step": 1,
+      "name": "<step name>",
+      "product_type": "<product type>",
+      "instructions": "<how to use>",
+      "duration": "<time needed>",
+      "key_ingredients": ["<ingredient>"]
+    }
+  ],
+  "night_routine": [
+    {
+      "step": 1,
+      "name": "<step name>",
+      "product_type": "<product type>",
+      "instructions": "<how to use>",
+      "duration": "<time needed>",
+      "key_ingredients": ["<ingredient>"]
+    }
+  ],
+  "weekly_treatments": [
+    {
+      "name": "<treatment name>",
+      "frequency": "<how often>",
+      "day": "<recommended day>",
+      "description": "<what it does>"
+    }
+  ],
+  "general_tips": ["<tip 1>", "<tip 2>", "<tip 3>"]
+}
+
+Return ONLY valid JSON.

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#0b1326",
+            "surface-container-highest": "#2d3449",
+            "surface-bright": "#31394d",
+            "on-tertiary-fixed-variant": "#842225",
+            "outline": "#86948a",
+            "on-tertiary-fixed": "#410005",
+            "primary-fixed-dim": "#4edea3",
+            "inverse-on-surface": "#283044",
+            "tertiary-container": "#fc7c78",
+            "secondary-container": "#334d38",
+            "secondary": "#b0ceb4",
+            "surface-variant": "#2d3449",
+            "on-surface-variant": "#bbcabf",
+            "secondary-fixed": "#cceacf",
+            "primary-fixed": "#6ffbbe",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed": "#002113",
+            "surface-container-high": "#222a3d",
+            "surface-container-low": "#131b2e",
+            "on-secondary-container": "#9fbca3",
+            "background": "#0b1326",
+            "on-primary-fixed-variant": "#005236",
+            "on-error": "#690005",
+            "on-surface": "#dae2fd",
+            "error": "#ffb4ab",
+            "on-primary": "#003824",
+            "surface-dim": "#0b1326",
+            "on-secondary-fixed-variant": "#334d38",
+            "tertiary": "#ffb3af",
+            "error-container": "#93000a",
+            "primary": "#4edea3",
+            "primary-container": "#10b981",
+            "surface-tint": "#4edea3",
+            "surface-container-lowest": "#060e20",
+            "tertiary-fixed-dim": "#ffb3af",
+            "secondary-fixed-dim": "#b0ceb4",
+            "inverse-surface": "#dae2fd",
+            "outline-variant": "#3c4a42",
+            "on-primary-container": "#00422b",
+            "on-tertiary-container": "#711419",
+            "on-secondary-fixed": "#062010",
+            "surface-container": "#171f33",
+            "inverse-primary": "#006c49",
+            "on-secondary": "#1c3623",
+            "on-tertiary": "#650911",
+            "tertiary-fixed": "#ffdad7",
+            "on-background": "#dae2fd"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-effect {
+      background: rgba(45, 52, 73, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .shadow-ambient {
+      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#131b2e] flex flex-col p-6 gap-2 z-50">
+<div class="bg-[#0b1326] w-px h-full absolute right-0"></div>
+<div class="text-lg font-black text-[#4edea3] mb-8 font-headline">Clinical Portal</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out font-['Manrope'] font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#4edea3] bg-[#171f33] rounded-xl font-['Manrope'] font-semibold text-sm transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="clinical_notes">clinical_notes</span> AI Analysis
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out font-['Manrope'] font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span> Routine Planner
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out font-['Manrope'] font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="video_chat">video_chat</span> Consultations
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out font-['Manrope'] font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span> Product Lab
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] hover:text-[#dae2fd] transition-all duration-200 ease-in-out font-['Manrope'] font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span> Progress Tracker
+      </a>
+</div>
+<div class="mt-auto flex flex-col gap-2 pt-6 border-t border-[#2d3449]/20">
+<a class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span> Support
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#dae2fd]/50 hover:bg-[#171f33] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span> Sign Out
+      </a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full h-16 sticky top-0 bg-[#0b1326] flex items-center justify-between px-8 z-40">
+<div class="flex items-center gap-4 bg-surface-container-highest/40 px-4 py-2 rounded-full focus-within:ring-1 ring-[#4edea3]/20 transition-all">
+<span class="material-symbols-outlined text-[#dae2fd]/60" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-[#dae2fd] w-64 placeholder:text-[#dae2fd]/40" placeholder="Search clinical library..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:bg-[#2d3449] p-2 rounded-full transition-all text-[#dae2fd]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-[#2d3449] p-2 rounded-full transition-all text-[#dae2fd]">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#4edea3]/30">
+<img alt="Dr. Aris Thorne" data-alt="professional portrait of a medical doctor in a modern clinical setting with soft blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpMaM4Q3t-NdDp7R2vfZ-JQ0_EEahCXS9-s7OadKSFo6PjTZXmhZ_-cv-4e7FbpLEvHLBDeNxfINV6VxNstAKegOUYee8Go9f0vg3J62M_lGrWk9fhKP8Rg5iAPfgYVU_YT0oAwMSEu7RffPro3xSv_V7TltzzYnE01ADY35o1hzflKr97Rgb_E8vLsZ3ZhAZ6w7Kk4KPvFOnOcuAuQVWxblZ-BlTiPs35ce417eRrM5fINdAtOmVzoRlL-M1oyaO644ozaeRmj-s"/>
+</div>
+</div>
+</header>
+<!-- Content -->
+<section class="px-12 py-10 flex flex-col gap-12 max-w-7xl mx-auto w-full">
+<!-- Hero Header -->
+<div class="space-y-4">
+<label class="text-[0.75rem] uppercase tracking-[0.1em] text-primary font-bold">Your Personal Skincare Sanctuary</label>
+<h1 class="text-5xl font-extrabold font-headline tracking-tight text-on-surface">Lumière Nocturne <span class="text-[#dae2fd]/40 font-light italic">Clinical Library</span></h1>
+</div>
+<!-- Filters -->
+<nav class="flex gap-4">
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full text-sm font-semibold shadow-ambient transition-transform active:scale-95">All Collections</button>
+<button class="px-6 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-highest rounded-full text-sm font-semibold transition-all">Products</button>
+<button class="px-6 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-highest rounded-full text-sm font-semibold transition-all">Routines</button>
+<button class="px-6 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-highest rounded-full text-sm font-semibold transition-all">Science</button>
+</nav>
+<!-- Featured Bento Grid Section -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Large Featured Article Card -->
+<article class="col-span-12 lg:col-span-8 group relative rounded-xl overflow-hidden bg-surface-container shadow-ambient border border-white/5">
+<div class="aspect-[16/9] w-full relative overflow-hidden">
+<img alt="Hyaluronic Acid" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="extreme close up of iridescent liquid droplets and glass laboratory pipettes in deep teal clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFZsU61dbZZA-6emQx1DQ_jwrPPmPG161c6_AABlycZxSus6cmMUWKRbfxDV4R09J1Oi8cOGI9gs-ZUbsYq7SwjqENHRfmo_RzWnRIAENgySd0pDbfgv6MnGKtknzO3LtHpLl275yJ6OCRsfNtfrMfSfxGTymsqwxB4LZc0s0BfNAe-Hy_7qD3sr-Bq69qe-Ixy_kLN32G-wL-t99Cr-hC5HWyeNjs0OKTUM3mugcB_t3tFb2xyfl_h0So5isI3fbEeyYlLCYxb8k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-3 py-1 rounded-full uppercase tracking-widest font-bold">Molecular Science</span>
+<span class="text-on-surface/40 text-xs font-medium">12 Min Read</span>
+</div>
+<h2 class="text-3xl font-bold font-headline mb-4 text-on-surface leading-tight">Molecular Impact of Hyaluronic Acid on Dermal Elasticity</h2>
+<p class="text-on-surface/60 max-w-xl text-md leading-relaxed mb-6">Explore our latest clinical trial data on low-molecular weight HA and its penetration depth through the stratum corneum in nocturnal recovery phases.</p>
+<button class="flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">
+              Read Deep Dive <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Secondary Recommendation Card -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="flex-1 bg-surface-container rounded-xl p-6 glass-effect border border-white/5 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary mb-4" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h3 class="text-xl font-bold font-headline mb-2">AI Smart Recommendation</h3>
+<p class="text-on-surface/50 text-sm leading-relaxed">Based on your last 3 scans, we suggest prioritizing Ceramide-rich infusions this week.</p>
+</div>
+<a class="mt-6 text-primary text-sm font-bold flex items-center gap-1 group" href="#">
+              View Protocol <span class="material-symbols-outlined text-xs transition-transform group-hover:translate-x-1" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<div class="flex-1 bg-gradient-to-br from-primary/10 to-transparent rounded-xl p-6 border border-primary/20 flex flex-col justify-between">
+<h3 class="text-xl font-bold font-headline">Clinical Routine: <span class="text-primary italic">Nocturnal Reset</span></h3>
+<div class="mt-4 flex -space-x-3">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="water_drop">water_drop</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="science">science</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="nightlight">nightlight</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Small Cards Grid -->
+<div class="space-y-6">
+<h3 class="text-sm uppercase tracking-widest text-[#dae2fd]/40 font-bold">Saved Items &amp; Formulations</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Item 1 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden group border border-white/5 transition-all hover:bg-surface-container">
+<div class="h-40 overflow-hidden">
+<img alt="Serum bottle" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="luxurious minimal emerald glass serum bottle on a dark reflective surface with cinematic highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3umFFF2Qiyb_cVTofpIlHx0iFiXWeVnU4mFF_r9gozxyweiIKX74gufXcP3JrhoR6N9wHMHS_RLFpHozUJeEKRAJ37RX-DPaauhvXl5A-pHoVHAeeuKGANJEAA2U1rkzlFHbNIBDjoVrwvPwz1_B18pqOT5pGkunBTsYPVAhCf-3fLm6bqZQFgJnoQvdN4U0yiKaAk4smS5hAeZihOzmgDJ-_mWKwfnOn72b1x7PieQG_tJZeeu3HFMTo1VvxUgeRU77ODJsF94M"/>
+</div>
+<div class="p-5">
+<div class="text-[10px] text-primary/70 uppercase font-bold tracking-tighter mb-1">Serum Lab</div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Luminal Peptide Infusion</h4>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xs text-on-surface/40">v2.4 Formulation</span>
+<span class="material-symbols-outlined text-on-surface/30 cursor-pointer hover:text-primary" data-icon="bookmark" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden group border border-white/5 transition-all hover:bg-surface-container">
+<div class="h-40 overflow-hidden">
+<img alt="Clinical trial" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="blue microscopic image of cellular structures glowing under fluorescence with sharp detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZRvXtmGRF4vwTudM7SnNqn2wXBbgzvrb9gvmDUGnniXbR5IVUCoHYzNCHhjPL5I7Ovp222NmAjaWaw3Aw0cKNO7wa1vUVE0vFwJRpBtR6-AVJ48R-vcEicl1UMSHAVCYf0FCtBpYo8LE5iDe_g7w8A8fVunhr7d15qqNGvyP3xDfsgqh_T5X7XlYdOa9YSf2nYaZUirJ_MhzI7upzQvX3aXGcV7hKMruDI-pecyNAwMGGJL405MstyyPnFDEpc8b-N7432I2e0BY"/>
+</div>
+<div class="p-5">
+<div class="text-[10px] text-primary/70 uppercase font-bold tracking-tighter mb-1">Analysis</div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Lipid Barrier Efficiency</h4>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xs text-on-surface/40">Lab Report #882</span>
+<span class="material-symbols-outlined text-on-surface/30 cursor-pointer hover:text-primary" data-icon="bookmark" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden group border border-white/5 transition-all hover:bg-surface-container">
+<div class="h-40 overflow-hidden">
+<img alt="Routine" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="close up of a person applying transparent gel to skin under soft moonlight through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxYVBXB9Cofb1v2_ahVTDAFj9oGWSzhpWlvpeP_knubKAYOCVbLyxnARiJvmvXsX7qs91MO9wTnYQK_6rGIHIfalPgGfacXHVUFIlmreW2BM1l6ZjzyzlU0-bGaFvpP_UrE9NbyF7B0bbo4EFXTtHSmleG2b7T-WeoOT_XWJKbcvLxRO7WF58wnTPSBO37XUt0qZQKDcv-9TnIbE4oGZUDBUy2oUQl50XNhRbutIMGh3xMcd7vYFOKsCX1mwKSR1vrAR9IA9Tckck"/>
+</div>
+<div class="p-5">
+<div class="text-[10px] text-primary/70 uppercase font-bold tracking-tighter mb-1">Routine</div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">7-Step Hydration Lock</h4>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xs text-on-surface/40">User Curated</span>
+<span class="material-symbols-outlined text-on-surface/30 cursor-pointer hover:text-primary" data-icon="bookmark" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden group border border-white/5 transition-all hover:bg-surface-container">
+<div class="h-40 overflow-hidden">
+<img alt="Botanical Science" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="macro photograph of medicinal plant leaves with visible vein structures in moody dark green tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANJq7cZ7rf2AcwDtNmBb1av9UDR56unm6KpF6TFLQWmbHk-B1pVm4ydiuJHWUky2ki9nhaNv9uAuv3Y3wJHuCml_Kf2vzUzU5ISaC-oMq0AJAjjLHcVkfiJTbtYNgQoNu_PT81LHAsunyx2a2vAk4g6nQQ6Oru6nQa-t6OFqeTgLe_tGGNZINDKEuOv9hK2F52K38AIp541vca49zwlHjf9aL8XsA10-WoZ9Hg2zNt4eSBkLI0aWZyIhtcZjcvOSyQdxAHzq20Byg"/>
+</div>
+<div class="p-5">
+<div class="text-[10px] text-primary/70 uppercase font-bold tracking-tighter mb-1">Ingredients</div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Botanical Stem Cell Extract</h4>
+<div class="flex items-center justify-between mt-4">
+<span class="text-xs text-on-surface/40">Active Compound</span>
+<span class="material-symbols-outlined text-on-surface/30 cursor-pointer hover:text-primary" data-icon="bookmark" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Banner -->
+<section class="relative rounded-xl p-10 overflow-hidden bg-gradient-to-r from-surface-container-high to-surface-container-low border border-white/5 shadow-ambient">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="text-center md:text-left">
+<h2 class="text-3xl font-extrabold font-headline text-on-surface mb-2">Ready for your weekly analysis?</h2>
+<p class="text-[#dae2fd]/60 font-medium max-w-md">Our AI is prepared to scan your progress and optimize your sanctuary formulations.</p>
+</div>
+<button class="px-8 py-4 bg-primary text-on-primary font-black uppercase tracking-widest rounded-xl shadow-[0_0_20px_rgba(78,222,163,0.4)] active:scale-95 transition-all">
+            Schedule Scan
+          </button>
+</div>
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>
+</section>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 mt-auto flex flex-col items-center gap-6 border-t border-[#2d3449]/10 bg-[#0b1326]">
+<div class="font-bold text-[#dae2fd] text-lg">Lumière Clinical</div>
+<nav class="flex gap-8">
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Clinical Trials</a>
+<a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40 hover:text-[#4edea3] underline transition-all" href="#">Sustainability</a>
+</nav>
+<p class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#dae2fd]/40">© 2024 Lumière Clinical. Sanctuary at Night Edition.</p>
+</footer>
+</main>
+</body></html>
