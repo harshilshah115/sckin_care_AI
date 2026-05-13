@@ -16,7 +16,6 @@ pillow>=10.0.0,<12.0.0
 
 # Environment Variables
 python-dotenv==1.0.1
-1
 # AI & Machine Learning
 google-genai==0.2.2
 requests==2.31.0
