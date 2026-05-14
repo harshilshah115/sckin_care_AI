@@ -69,18 +69,53 @@ function Dashboard() {
     { icon: 'calendar_today', title: 'View Routine', description: 'Personalized regimen', path: '/routine', color: 'tertiary' },
   ]
 
+  const clampPercent = (value) => {
+    if (typeof value !== 'number' || Number.isNaN(value)) return null
+    return Math.max(0, Math.min(100, Math.round(value)))
+  }
+
+  const getIssuePercent = (issue) => {
+    if (!issue) return null
+    const confidence = clampPercent(issue.confidence)
+    if (confidence !== null) return confidence
+    const severity = String(issue.severity || '').toLowerCase()
+    const severityMap = {
+      mild: 40,
+      moderate: 65,
+      severe: 85,
+      refer_to_doctor: 95,
+    }
+    return severityMap[severity] ?? null
+  }
+
   const latestScan = dashboardData.recentScans[0]
   const score = dashboardData.metrics?.current_score || latestScan?.skin_score || 0
   const scoreLabel = score >= 70 ? 'Improving' : score >= 40 ? 'Needs Attention' : 'High Priority'
   const scoreChange = dashboardData.metrics?.score_change ?? 0
+  const hasScan = Boolean(latestScan)
+  const metrics = latestScan?.metrics || {}
+  const acneIssue = latestScan?.detected_issues?.find((issue) =>
+    String(issue?.name || '').toLowerCase().includes('acne')
+  )
   const issuePrimary = latestScan?.detected_issues?.[0]?.name || 'Acne'
   const issueSecondary = latestScan?.detected_issues?.[1]?.name || 'Oiliness'
 
+  const derivedAcne = Math.min(90, Math.max(20, 100 - score))
+  const derivedOiliness = Math.min(85, Math.max(25, 90 - score))
+  const derivedHydration = Math.min(70, Math.max(20, 60 - scoreChange))
+  const derivedPores = Math.min(80, Math.max(30, score))
+
+  const acneValue = getIssuePercent(acneIssue) ?? (hasScan ? derivedAcne : 0)
+  const oilinessValue = clampPercent(metrics.oiliness) ?? (hasScan ? derivedOiliness : 0)
+  const hydrationValue = clampPercent(metrics.hydration) ?? (hasScan ? derivedHydration : 0)
+  const poresValue = clampPercent(metrics.pore_visibility) ?? (hasScan ? derivedPores : 0)
+  const acneLabel = acneIssue?.name || issuePrimary || 'Acne'
+
   const breakdownRows = [
-    { label: issuePrimary, tone: 'critical', value: Math.min(90, Math.max(20, 100 - score)) },
-    { label: issueSecondary, tone: 'warning', value: Math.min(85, Math.max(25, 90 - score)) },
-    { label: 'Hydration', tone: 'critical', value: Math.min(70, Math.max(20, 60 - scoreChange)) },
-    { label: 'Pores', tone: 'success', value: Math.min(80, Math.max(30, score)) },
+    { label: acneLabel, tone: 'critical', value: acneValue },
+    { label: 'Oiliness', tone: 'warning', value: oilinessValue },
+    { label: 'Hydration', tone: 'critical', value: hydrationValue },
+    { label: 'Pores', tone: 'success', value: poresValue },
   ]
 
   const morningSteps = routineStatus?.morning?.routine?.steps || []

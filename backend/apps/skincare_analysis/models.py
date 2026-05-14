@@ -36,6 +36,7 @@ class SkinScan(models.Model):
     severity = models.CharField(max_length=20, choices=SEVERITY_CHOICES, default='none')
     confidence_score = models.FloatField(default=0.0)  # AI confidence 0-100
     skin_score = models.IntegerField(default=0)  # Overall skin health score 0-100
+    metrics = models.JSONField(default=dict)  # Per-metric scores like oiliness, hydration, pores
     
     # Detailed analysis
     analysis_text = models.TextField(blank=True)  # Full AI analysis

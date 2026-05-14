@@ -70,6 +70,7 @@ class SkinScanCreateView(APIView):
                 scan.analysis_text = analysis.get('message', '')
                 scan.severity = 'refer_to_doctor'
                 scan.detected_issues = [{'name': analysis.get('detected_issue', 'Requires Assessment'), 'severity': 'refer_to_doctor'}]
+                scan.metrics = analysis.get('metrics', {})
                 scan.ai_model_used = analysis.get('ai_model_used', os.getenv('AI_MODEL', 'gemini-2.0-flash'))
                 scan.processing_time = analysis.get('processing_time', 0)
                 scan.save()
@@ -86,6 +87,7 @@ class SkinScanCreateView(APIView):
             scan.severity = analysis.get('severity', 'unknown')
             scan.confidence_score = analysis.get('confidence_score', 0)
             scan.skin_score = analysis.get('skin_score', 0)
+            scan.metrics = analysis.get('metrics', {})
             scan.analysis_text = analysis.get('analysis_text', '')
             scan.recommendations = analysis.get('recommendations', {})
             scan.ai_model_used = analysis.get('ai_model_used', os.getenv('AI_MODEL', 'gemini-2.0-flash'))

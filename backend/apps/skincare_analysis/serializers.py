@@ -20,13 +20,13 @@ class SkinScanSerializer(serializers.ModelSerializer):
         model = SkinScan
         fields = [
             'id', 'image', 'scan_type', 'detected_issues', 'severity',
-            'confidence_score', 'skin_score', 'analysis_text', 'analysis_text_preview',
+            'confidence_score', 'skin_score', 'metrics', 'analysis_text', 'analysis_text_preview',
             'recommendations',
             'ai_model_used', 'processing_time', 'created_at', 'updated_at'
         ]
         read_only_fields = [
             'id', 'detected_issues', 'severity', 'confidence_score', 'skin_score',
-            'analysis_text', 'analysis_text_preview', 'recommendations',
+            'metrics', 'analysis_text', 'analysis_text_preview', 'recommendations',
             'ai_model_used', 'processing_time', 'created_at', 'updated_at'
         ]
 
@@ -50,7 +50,7 @@ class SkinScanListSerializer(serializers.ModelSerializer):
     class Meta:
         model = SkinScan
         fields = [
-            'id', 'image', 'scan_type', 'detected_issues', 'skin_score',
+            'id', 'image', 'scan_type', 'detected_issues', 'skin_score', 'metrics',
             'severity', 'analysis_text_preview', 'created_at'
         ]
 
