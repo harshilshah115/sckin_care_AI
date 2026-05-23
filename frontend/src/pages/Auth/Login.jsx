@@ -136,7 +136,7 @@ function Login() {
                 <div className="form-group">
                   <div className="form-label-row">
                     <label className="form-label">Password</label>
-                    <Link to="/forgot-password" className="form-link">Forgot?</Link>
+                    <span className="form-link disabled-link">Forgot?</span>
                   </div>
                   <div className="input-wrapper">
                     <input

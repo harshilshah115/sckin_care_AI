@@ -2,17 +2,16 @@ from rest_framework import status, generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import get_user_model, authenticate
-
+import logging
+from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import (
-    UserRegistrationSerializer,
-    UserLoginSerializer,
-    UserSerializer,
-    UserProfileUpdateSerializer,
-    SkinProfileSerializer,
+    UserRegistrationSerializer, UserLoginSerializer, UserSerializer,
+    UserProfileUpdateSerializer, SkinProfileSerializer,
     ChangePasswordSerializer
 )
+
+logger = logging.getLogger(__name__)
 
 User = get_user_model()
 
@@ -92,7 +91,8 @@ class LogoutView(APIView):
                 token = RefreshToken(refresh_token)
                 token.blacklist()
             return Response({'message': 'Logout successful'})
-        except Exception:
+        except Exception as e:
+            logger.error(f"Logout error: {e}", exc_info=True)
             return Response({'message': 'Logout successful'})
 
 

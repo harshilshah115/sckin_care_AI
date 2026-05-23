@@ -52,6 +52,9 @@ class Product(models.Model):
     # Media
     image_url = models.URLField(blank=True)
     
+    # Barcode
+    barcode = models.CharField(max_length=50, unique=True, blank=True, null=True, help_text='Product barcode (EAN/UPC)')
+    
     # Links
     affiliate_link = models.URLField(blank=True)
     

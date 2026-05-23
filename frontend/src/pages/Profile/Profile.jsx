@@ -33,6 +33,7 @@ function Profile() {
     notifications: true,
     emailUpdates: false,
     language: 'english',
+    darkMode: false,
   })
 
   useEffect(() => {
@@ -204,7 +205,11 @@ function Profile() {
                 <div className="profile-header-card">
                   <div className="avatar-section">
                     <div className="avatar-wrapper">
-                      <img src={profile.avatar} alt={profile.name} />
+                      {profile.avatar ? (
+                        <img src={profile.avatar} alt={profile.name} />
+                      ) : (
+                        <div className="avatar-placeholder">{profile.name?.charAt(0) || 'U'}</div>
+                      )}
                       {isEditing && (
                         <button className="avatar-edit-btn">
                           <span className="material-symbols-outlined">photo_camera</span>

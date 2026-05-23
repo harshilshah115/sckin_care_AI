@@ -1,0 +1,55 @@
+.result-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.result-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.result-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.result-card-title h3 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+  color: var(--text-primary);
+}
+
+.result-card-title p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.severity-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.severity-badge.mild { background: #d4edda; color: #155724; }
+.severity-badge.moderate { background: #fff3cd; color: #856404; }
+.severity-badge.severe { background: #f8d7da; color: #721c24; }
+.severity-badge.refer_to_doctor { background: #cce5ff; color: #004085; }
+
+.result-card-body {
+  margin-top: 1rem;
+}
+
+.result-card-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}

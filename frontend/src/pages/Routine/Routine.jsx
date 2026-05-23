@@ -307,7 +307,7 @@ function Routine() {
                   <div className="weekly-list">
                     {weeklyTasks.map((task) => (
                       <label key={task.id} className="weekly-item">
-                        <input type="checkbox" defaultChecked={task.completed} />
+                        <input type="checkbox" checked={task.completed} readOnly />
                         <span>{task.label}</span>
                       </label>
                     ))}

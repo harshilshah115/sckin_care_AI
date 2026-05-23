@@ -4,6 +4,8 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import { useAuth } from '../../context/AuthContext'
 import { historyAPI, scanAPI, questionAPI, routinesAPI } from '../../services/api'
 import Loader from '../../components/Loader/Loader'
+import GlowGauge from '../../components/GlowGauge/GlowGauge'
+import Skeleton from '../../components/Skeleton/Skeleton'
 import './Dashboard.css'
 
 function Dashboard() {
@@ -60,7 +62,7 @@ function Dashboard() {
 
   const getUserName = () => {
     if (!user) return 'User'
-    return user.name || user.email.split('@')[0]
+    return user.name || (user.email ? user.email.split('@')[0] : 'User')
   }
 
   const quickActions = [
@@ -262,8 +264,16 @@ function Dashboard() {
 
         <div className="dashboard-content">
           {loading ? (
-            <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
-              <Loader />
+            <div className="dashboard-loading">
+              <div className="skeleton-welcome">
+                <Skeleton width="60%" height="1.5rem" />
+                <Skeleton width="40%" height="1rem" />
+              </div>
+              <div className="skeleton-cards">
+                <Skeleton variant="rect" height="120px" />
+                <Skeleton variant="rect" height="120px" />
+                <Skeleton variant="rect" height="120px" />
+              </div>
             </div>
           ) : (
             <>
@@ -298,28 +308,26 @@ function Dashboard() {
                 </section>
 
                 <section className="score-panel">
-                  <div className="score-gauge" style={{ '--score': score }}>
-                    <div className="score-ring">
-                      <div className="score-inner">
-                        <div className="score-value">{score}</div>
-                        <div className="score-max">/100</div>
-                        <div className="score-label">{scoreLabel}</div>
-                      </div>
+                  <GlowGauge score={score} size={160} strokeWidth={10} label="Glow Score" />
+                  {scoreChange !== 0 && (
+                    <div className={`score-change ${scoreChange > 0 ? 'up' : 'down'}`}>
+                      <span className="material-symbols-outlined">
+                        {scoreChange > 0 ? 'trending_up' : 'trending_down'}
+                      </span>
+                      <span>{Math.abs(scoreChange)} pts from last scan</span>
                     </div>
-                  </div>
+                  )}
                   <div className="score-issues">
-                    <div className="issue-chip">
-                      <span className="issue-title">{issuePrimary}</span>
-                      <span className="issue-level">Moderate</span>
-                    </div>
-                    <div className="issue-chip">
-                      <span className="issue-title">{issueSecondary}</span>
-                      <span className="issue-level">High</span>
-                    </div>
+                    {latestScan?.detected_issues?.slice(0, 3).map((issue, i) => (
+                      <div key={i} className={`issue-chip severity-${issue.severity || 'mild'}`}>
+                        <span className="issue-title">{issue.name || issue}</span>
+                        <span className="issue-level">{issue.severity || 'mild'}</span>
+                      </div>
+                    ))}
                   </div>
                   <p className="score-note">
                     {dashboardData.recentScans.length > 0
-                      ? 'Your skin is currently showing imbalance. Focus on balancing and calming.'
+                      ? `Based on your last scan. ${score >= 70 ? 'Your skin is on the right track!' : score >= 40 ? 'Focus on your key concerns for improvement.' : 'Consider consulting a dermatologist for personalized care.'}`
                       : 'Run your first scan to see your personalized analysis and score.'}
                   </p>
                 </section>
@@ -414,7 +422,7 @@ function Dashboard() {
                   </div>
                   <div className="progress-main">
                     <div className="progress-score">
-                      <span>{score - Math.abs(scoreChange)}</span>
+                      <span>                        {Math.max(0, score - Math.abs(scoreChange))}</span>
                       <span className="progress-arrow">to</span>
                       <span>{score}</span>
                     </div>

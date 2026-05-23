@@ -8,6 +8,7 @@ from .views import (
     QuestionListView,
     QuestionDetailView,
     QuestionFeedbackView,
+    IngredientAnalysisView,
     AITestView,
     AITestQuestionView
 )
@@ -16,6 +17,9 @@ urlpatterns = [
     # AI Test Endpoints (No Auth Required)
     path('test/', AITestView.as_view(), name='ai_test'),
     path('test/question/', AITestQuestionView.as_view(), name='ai_test_question'),
+    
+    # Ingredient Analysis
+    path('ingredients/analyze/', IngredientAnalysisView.as_view(), name='ingredient_analyze'),
     
     # Skin Scans
     path('', SkinScanCreateView.as_view(), name='scan_create'),

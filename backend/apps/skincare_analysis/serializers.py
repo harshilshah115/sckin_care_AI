@@ -87,3 +87,24 @@ class QuestionFeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = ['is_helpful']
+
+
+class IngredientAnalysisSerializer(serializers.Serializer):
+    """Serializer for ingredient analysis requests."""
+    
+    ingredients = serializers.ListField(
+        child=serializers.CharField(max_length=200),
+        min_length=1,
+        max_length=100,
+        help_text='List of ingredient names to analyze'
+    )
+    skin_type = serializers.ChoiceField(
+        choices=['oily', 'dry', 'combination', 'normal', 'sensitive', 'unknown'],
+        required=False,
+        default='unknown'
+    )
+    concerns = serializers.ListField(
+        child=serializers.CharField(max_length=100),
+        required=False,
+        default=list
+    )

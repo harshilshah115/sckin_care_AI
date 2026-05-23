@@ -314,11 +314,16 @@
 }
 
 .form-link {
-  font-size: 0.625rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   color: var(--primary);
-  transition: color var(--transition-fast);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.form-link.disabled-link {
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .form-link:hover {

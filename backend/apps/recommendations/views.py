@@ -24,7 +24,7 @@ class SavedProductListView(generics.ListCreateAPIView):
     serializer_class = SavedProductSerializer
     
     def get_queryset(self):
-        return SavedProduct.objects.filter(user=self.request.user)
+        return SavedProduct.objects.filter(user=self.request.user).select_related('product__category')
     
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)

@@ -76,7 +76,7 @@ async function refreshAccessToken() {
 
     if (response.ok) {
       const data = await response.json();
-      localStorage.setItem('access_token', data.access);
+      setTokens(data.access, getRefreshToken());
       return true;
     }
     
@@ -346,7 +346,43 @@ export const savedAPI = {
       method: 'DELETE',
     });
     return { ok: response.ok };
-  }
+  },
+
+  // Unified methods for Products & SavedItems pages
+  async getSavedItems() {
+    const [productsRes, remediesRes] = await Promise.all([
+      fetchWithAuth('/recommendations/saved/products/'),
+      fetchWithAuth('/recommendations/saved/remedies/'),
+    ]);
+    const products = productsRes.ok ? normalizeListResponse(await productsRes.json()) : [];
+    const remedies = remediesRes.ok ? normalizeListResponse(await remediesRes.json()) : [];
+    const mappedProducts = (Array.isArray(products) ? products : []).map(p => ({
+      ...p,
+      item_type: 'product',
+      item_id: p.product?.id || p.id,
+      item_data: p.product,
+    }));
+    const mappedRemedies = (Array.isArray(remedies) ? remedies : []).map(r => ({
+      ...r,
+      item_type: 'remedy',
+      item_id: r.remedy?.id || r.id,
+      item_data: r.remedy,
+    }));
+    return [...mappedProducts, ...mappedRemedies];
+  },
+
+  async removeSavedItem(id) {
+    const response = await fetchWithAuth(`/recommendations/saved/products/${id}/`, { method: 'DELETE' });
+    if (response.ok) return { ok: true };
+    const response2 = await fetchWithAuth(`/recommendations/saved/remedies/${id}/`, { method: 'DELETE' });
+    return { ok: response2.ok };
+  },
+
+  async saveItem({ item_type, item_id, item_data }) {
+    if (item_type === 'product') return this.saveProduct(item_id, '');
+    if (item_type === 'remedy') return this.saveRemedy(item_id, '');
+    throw new Error(`Unknown item_type: ${item_type}`);
+  },
 };
 
 // ============================================

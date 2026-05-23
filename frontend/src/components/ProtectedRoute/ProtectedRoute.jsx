@@ -8,7 +8,7 @@ function ProtectedRoute({ children }) {
 
   // Show loader while checking auth status
   if (loading) {
-    return <Loader variant="page" text="Loading..." />
+    return <Loader size="large" text="Loading..." />
   }
 
   // Redirect to login if not authenticated

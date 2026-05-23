@@ -99,7 +99,7 @@ function Register() {
     const result = await register(userData)
     
     if (result.success) {
-      navigate('/dashboard')
+      navigate('/onboarding')
     } else {
       setError(result.error)
     }

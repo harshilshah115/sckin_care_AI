@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import Loader from '../../components/Loader/Loader'
 import { historyAPI } from '../../services/api'
@@ -158,7 +159,7 @@ function Progress() {
               <span className="material-symbols-outlined" style={{ fontSize: '4rem', opacity: 0.3 }}>trending_up</span>
               <h3>No Progress Data Yet</h3>
               <p>Complete at least 2 scans to track your progress</p>
-              <a href="/scan" className="btn btn-primary" style={{ marginTop: '1rem' }}>Start First Scan</a>
+              <Link to="/scan" className="btn btn-primary" style={{ marginTop: '1rem' }}>Start First Scan</Link>
             </div>
           ) : !hasFilteredScores ? (
             <div className="empty-state" style={{ textAlign: 'center', padding: '4rem' }}>

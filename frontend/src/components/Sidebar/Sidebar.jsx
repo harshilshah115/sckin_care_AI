@@ -15,7 +15,7 @@ function Sidebar({ isOpen, onClose }) {
 
   const getUserName = () => {
     if (!user) return 'User'
-    return user.name || user.email.split('@')[0]
+    return user.name || (user.email ? user.email.split('@')[0] : 'User')
   }
 
   const getUserRole = () => {

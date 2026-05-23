@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # Third party apps
     'rest_framework',
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     
     # Local apps
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'apps.recommendations',
     'apps.products',
     'apps.history',
+    'apps.routines',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,6 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 
 if DATABASE_URL:
     # Production: Use Supabase PostgreSQL
-    import dj_database_url
     DATABASES = {
         'default': dj_database_url.config(
             default=DATABASE_URL,
@@ -213,9 +214,4 @@ CORS_ALLOW_HEADERS = [
 # File Upload Settings
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024  # 10 MB
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024  # 10 MB
-# reload
-# reload2
-# reload3
-# reload4
-# reload5
-# reload6
+

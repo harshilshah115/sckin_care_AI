@@ -6,6 +6,32 @@ import Loader from '../../components/Loader/Loader'
 import { scanAPI } from '../../services/api'
 import './SkinScan.css'
 
+function ExpandableText({ text, maxChars = 200, className = '' }) {
+  const [expanded, setExpanded] = useState(false)
+  if (!text) return null
+
+  const normalized = String(text).replace(/\s+/g, ' ').trim()
+  const isLong = normalized.length > maxChars
+  const displayText = expanded || !isLong
+    ? normalized
+    : `${normalized.slice(0, maxChars).trim()}...`
+
+  return (
+    <span className={className}>
+      {displayText}
+      {isLong && (
+        <button
+          type="button"
+          className="link-button"
+          onClick={() => setExpanded((prev) => !prev)}
+        >
+          {expanded ? 'Show less' : 'Show more'}
+        </button>
+      )}
+    </span>
+  )
+}
+
 function SkinScan() {
   const { id: scanId } = useParams()
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -21,32 +47,6 @@ function SkinScan() {
     sleepHours: '',
     waterIntake: ''
   })
-
-  const ExpandableText = ({ text, maxChars = 200, className = '' }) => {
-    const [expanded, setExpanded] = useState(false)
-    if (!text) return null
-
-    const normalized = String(text).replace(/\s+/g, ' ').trim()
-    const isLong = normalized.length > maxChars
-    const displayText = expanded || !isLong
-      ? normalized
-      : `${normalized.slice(0, maxChars).trim()}...`
-
-    return (
-      <span className={className}>
-        {displayText}
-        {isLong && (
-          <button
-            type="button"
-            className="link-button"
-            onClick={() => setExpanded((prev) => !prev)}
-          >
-            {expanded ? 'Show less' : 'Show more'}
-          </button>
-        )}
-      </span>
-    )
-  }
 
   const handleImageSelect = (file) => {
     setSelectedImage(file)

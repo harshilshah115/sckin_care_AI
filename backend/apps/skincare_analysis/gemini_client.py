@@ -1,8 +1,8 @@
-import time
 """
 Gemini API Client Wrapper
 Handles all interactions with Google's Gemini AI
 """
+import time
 
 import os
 import json
@@ -110,9 +110,9 @@ class GeminiClient:
                 image_part,
                 self._analysis_only_response_schema()
             )
-            self._log_ai_output('minimal', minimal_response.text)
             if not minimal_response or not minimal_response.text:
                 return self._build_fallback_response('Empty AI response')
+            self._log_ai_output('minimal', minimal_response.text)
             minimal_parsed = self._parse_json_response(minimal_response.text)
             if minimal_parsed.get('success'):
                 merged = self._merge_minimal_into_full(minimal_parsed.get('data', {}))
@@ -174,11 +174,14 @@ class GeminiClient:
 
     def _build_generation_config(self, response_schema: Optional[Dict[str, Any]] = None):
         """Build a generation config."""
-        return types.GenerateContentConfig(
+        config = types.GenerateContentConfig(
             temperature=self.temperature,
             max_output_tokens=self.max_tokens,
             response_mime_type='application/json'
         )
+        if response_schema:
+            config.response_schema = response_schema
+        return config
 
     def _create_client(self):
         """Create a Gemini client with a safe fallback for older SDKs."""

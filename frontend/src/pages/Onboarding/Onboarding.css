@@ -1,0 +1,187 @@
+.onboarding-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  padding: 1rem;
+}
+
+.onboarding-container {
+  width: 100%;
+  max-width: 640px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.onboarding-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.onboarding-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.onboarding-logo .material-symbols-outlined {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.step-indicator {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-dot.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.step-dot.completed {
+  background: var(--primary);
+  color: #fff;
+}
+
+.step-dot .material-symbols-outlined {
+  font-size: 0.875rem;
+}
+
+.onboarding-body {
+  padding: 2.5rem 2rem;
+}
+
+.step-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.step-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 2rem;
+}
+
+.options-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.options-grid.multi-select {
+  grid-template-columns: 1fr 1fr;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  position: relative;
+}
+
+.option-card:hover {
+  border-color: var(--primary);
+  background: var(--bg-secondary);
+}
+
+.option-card.selected {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, var(--card-bg));
+}
+
+.option-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.option-label {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.option-desc {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-top: 0.125rem;
+}
+
+.check-mark {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.onboarding-footer {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .options-grid.multi-select {
+    grid-template-columns: 1fr;
+  }
+
+  .onboarding-body {
+    padding: 1.5rem;
+  }
+
+  .onboarding-header {
+    padding: 1rem 1.5rem;
+  }
+}

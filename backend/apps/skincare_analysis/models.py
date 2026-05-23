@@ -19,6 +19,7 @@ class SkinScan(models.Model):
         ('mild', 'Mild'),
         ('moderate', 'Moderate'),
         ('severe', 'Severe'),
+        ('refer_to_doctor', 'Refer to Doctor'),
     ]
     
     user = models.ForeignKey(

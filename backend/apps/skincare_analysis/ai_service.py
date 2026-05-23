@@ -9,12 +9,30 @@ import re
 import os
 from typing import Dict, Any, List
 from .gemini_client import get_gemini_client
+from .grok_client import get_grok_client
 from .safety_filters import get_safety_filter
 from .prompts import (
     get_skin_analysis_prompt,
     get_question_answer_prompt,
     get_routine_generation_prompt
 )
+
+
+def _call_ai_with_fallback(primary_fn, fallback_fn, error_context='AI call failed'):
+    """Try primary AI, then Grok fallback, then local fallback."""
+    try:
+        result = primary_fn()
+        if result.get('success'):
+            return result
+        # Primary failed, try Grok
+        grok = get_grok_client()
+        if grok.is_available():
+            grok_result = fallback_fn(grok)
+            if grok_result.get('success'):
+                return grok_result
+    except Exception:
+        pass
+    return {'success': False, 'error': f'{error_context} - all AI providers failed'}
 
 
 def analyze_skin_image(image_path: str, user_profile: dict = None) -> Dict[str, Any]:
@@ -29,6 +47,8 @@ def analyze_skin_image(image_path: str, user_profile: dict = None) -> Dict[str, 
         Dictionary containing analysis results
     """
     start_time = time.time()
+    gemini = None
+    safety = None
     
     try:
         # Get clients
@@ -142,6 +162,8 @@ def answer_skincare_question(question: str, user_profile: dict = None) -> Dict[s
         Dictionary containing the answer and recommendations
     """
     start_time = time.time()
+    gemini = None
+    safety = None
     
     try:
         if _is_greeting_question(question):
@@ -1446,7 +1468,6 @@ def _normalize_analysis_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
 
 def test_ai_connection() -> Dict[str, Any]:
     """Test AI service connection"""
-    import time
     start_time = time.time()
     
     try:

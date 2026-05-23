@@ -14,9 +14,11 @@ from .serializers import (
     SkinScanListSerializer,
     QuestionSerializer,
     QuestionCreateSerializer,
-    QuestionFeedbackSerializer
+    QuestionFeedbackSerializer,
+    IngredientAnalysisSerializer
 )
 from .ai_service import analyze_skin_image, answer_skincare_question
+from .ingredient_analyzer import analyze_ingredients
 
 logger = logging.getLogger(__name__)
 
@@ -45,6 +47,8 @@ class SkinScanCreateView(APIView):
             }
             
             # Run AI analysis
+            with scan.image.open('rb') as img_file:
+                image_bytes = img_file.read()
             analysis = analyze_skin_image(scan.image.path, user_profile)
             
             # Check for errors
@@ -236,6 +240,31 @@ class QuestionFeedbackView(APIView):
             return Response({'message': 'Feedback recorded'})
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class IngredientAnalysisView(APIView):
+    """Analyze product ingredients for safety and skin-type suitability."""
+    
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request):
+        serializer = IngredientAnalysisSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+        user = request.user
+        user_profile = {
+            'skin_type': serializer.validated_data.get('skin_type') or getattr(user, 'skin_type', 'unknown'),
+            'concerns': serializer.validated_data.get('concerns') or getattr(user, 'concerns', []),
+            'allergies': getattr(user, 'allergies', 'None'),
+            'sensitivity': getattr(user, 'sensitivity', None),
+        }
+        
+        result = analyze_ingredients(
+            ingredients=serializer.validated_data['ingredients'],
+            user_profile=user_profile
+        )
+        
+        return Response(result, status=status.HTTP_200_OK)
 
 
 class AITestView(APIView):

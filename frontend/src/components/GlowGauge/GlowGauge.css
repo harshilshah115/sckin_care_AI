@@ -1,0 +1,46 @@
+.glow-gauge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow-gauge-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glow-gauge-arc {
+  transition: stroke-dashoffset 1s ease-in-out;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.glow-gauge-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  z-index: 1;
+}
+
+.glow-gauge-score {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.glow-gauge-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+}
+
+.glow-gauge-level {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

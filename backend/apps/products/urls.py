@@ -7,7 +7,8 @@ from .views import (
     FeaturedProductsView,
     PersonalizedProductsView,
     NaturalRemedyListView,
-    NaturalRemedyDetailView
+    NaturalRemedyDetailView,
+    BarcodeProductView,
 )
 
 urlpatterns = [
@@ -19,6 +20,9 @@ urlpatterns = [
     path('featured/', FeaturedProductsView.as_view(), name='featured_products'),
     path('personalized/', PersonalizedProductsView.as_view(), name='personalized_products'),
     path('<int:pk>/', ProductDetailView.as_view(), name='product_detail'),
+    
+    # Barcode Scanner
+    path('barcode/', BarcodeProductView.as_view(), name='product_barcode'),
     
     # Natural Remedies
     path('remedies/', NaturalRemedyListView.as_view(), name='remedy_list'),

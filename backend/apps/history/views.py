@@ -100,9 +100,16 @@ class ProgressSummaryView(APIView):
             last_scan = scans.last()
             
             # Compare detected issues
-            first_issues = set([i.get('name', '') for i in first_scan.detected_issues])
-            last_issues = set([i.get('name', '') for i in last_scan.detected_issues])
-            
+            def get_issue_name(item):
+                if isinstance(item, dict):
+                    return item.get('name', '')
+                elif isinstance(item, str):
+                    return item
+                return str(item) if item else ''
+
+            first_issues = set(get_issue_name(i) for i in first_scan.detected_issues)
+            last_issues = set(get_issue_name(i) for i in last_scan.detected_issues)
+
             resolved = first_issues - last_issues
             for issue in resolved:
                 improvements.append({
@@ -129,13 +136,17 @@ class ActivityTimelineView(APIView):
     
     def get(self, request):
         user = request.user
-        limit = int(request.query_params.get('limit', 20))
+        try:
+            limit = int(request.query_params.get('limit', 20))
+        except (ValueError, TypeError):
+            limit = 20
+        limit = max(1, min(limit, 100))
         
         # Get recent scans
-        scans = SkinScan.objects.filter(user=user)[:limit]
+        scans = SkinScan.objects.filter(user=user).order_by('-created_at')[:limit]
         
         # Get recent questions
-        questions = Question.objects.filter(user=user)[:limit]
+        questions = Question.objects.filter(user=user).order_by('-created_at')[:limit]
         
         # Combine and sort by date
         activities = []

@@ -1,4 +1,4 @@
-from rest_framework import generics, filters
+from rest_framework import generics, filters, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -11,6 +11,7 @@ from .serializers import (
     ProductListSerializer,
     NaturalRemedySerializer
 )
+from .barcode_scanner import lookup_product_by_barcode
 
 
 class ProductCategoryListView(generics.ListAPIView):
@@ -86,7 +87,7 @@ class PersonalizedProductsView(APIView):
         user = request.user
         
         # Build query based on user's skin profile
-        queryset = Product.objects.filter(is_active=True)
+        queryset = Product.objects.filter(is_active=True).select_related('category')
         
         if user.skin_type:
             queryset = queryset.filter(
@@ -146,3 +147,19 @@ class NaturalRemedyDetailView(generics.RetrieveAPIView):
     permission_classes = [AllowAny]
     queryset = NaturalRemedy.objects.filter(is_active=True)
     serializer_class = NaturalRemedySerializer
+
+
+class BarcodeProductView(APIView):
+    """Look up a product by barcode (local DB + Open Beauty Facts)."""
+    
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        barcode = request.query_params.get('barcode', '').strip()
+        if not barcode or not barcode.isdigit():
+            return Response(
+                {'error': 'Valid numeric barcode is required'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        result = lookup_product_by_barcode(barcode)
+        return Response(result)
