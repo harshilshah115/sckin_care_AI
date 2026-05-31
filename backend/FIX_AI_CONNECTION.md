@@ -76,7 +76,7 @@ pip list | findstr google
 ### Issue 2: "API key not configured"
 **Fix:** Check `.env` file has:
 ```env
-GEMINI_API_KEY=AIzaSyB2T8W4QC5_m7VONy4EKhFHL2KhVjMQyJo
+GEMINI_API_KEY=**************************
 ```
 
 ### Issue 3: "Invalid API key"
